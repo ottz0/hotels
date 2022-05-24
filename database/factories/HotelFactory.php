@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
 use App\Models\Hotel;
 
 /**
@@ -20,7 +19,11 @@ class HotelFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company()
+            'name' => $this->faker->company(),
+            'street_name' => $this->faker->streetAddress(),
+            'postcode' => $this->faker->postcode(),
+            'state' => $this->faker->stateAbbr(),
+            'star_rating' => rand(0,5),
         ];
     }
 }

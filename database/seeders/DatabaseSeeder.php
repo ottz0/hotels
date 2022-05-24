@@ -22,19 +22,23 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $hotelNames = DB::table('hotels')->insert([
-            ['name' => 'The Anchorage'],
-            ['name' => 'Ibis Budget Sydeny East'],
-            ['name' => 'Hilton Sydney'],
-            ['name' => 'Travelodge Hotel Sydney'],
-            ['name' => 'The Charrington Hotel of Chatswood'],
-            ['name' => 'YEHS Hotel Sydney CBD'],
-            ['name' => 'Great Souther Hotel Sydney'],
-            ['name' => 'Park Hyat Sydney'],
-        ]);
+        // $hotelNames = DB::table('hotels')->insert([
+        //     ['name' => 'The Anchorage'],
+        //     ['name' => 'Ibis Budget Sydeny East'],
+        //     ['name' => 'Hilton Sydney'],
+        //     ['name' => 'Travelodge Hotel Sydney'],
+        //     ['name' => 'The Charrington Hotel of Chatswood'],
+        //     ['name' => 'YEHS Hotel Sydney CBD'],
+        //     ['name' => 'Great Souther Hotel Sydney'],
+        //     ['name' => 'Park Hyat Sydney'],
+        // ]);
 
 
-        //Hotel::factory()->count(8)->create();
+
+
+        Hotel::factory()->count(30)->create();
+
+
 
 
         // Hotel::factory()->count(8)->make()->each(function($hotelNames) use ($hotels){
