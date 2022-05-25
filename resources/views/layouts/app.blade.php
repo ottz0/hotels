@@ -8,6 +8,13 @@
     </head>
     <body>
         <div class="container">
+            @if(session('status'))
+            <article class="message is-primary">
+                <div class="message-body">
+                    {{ session('status') }}
+                </div>
+              </article>
+            @endif
             @yield('content')
         </div>
     </body>

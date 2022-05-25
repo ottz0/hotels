@@ -26,9 +26,11 @@
 <div class="field">
     <label class="label">State</label>
     <div class="control">
-        <input class="input" type="text" placeholder="State" name="state" value="{{ old('state', optional($hotel ?? null)->state) }}">
+        <input class="input @error('state') is-danger @enderror" type="text" placeholder="State" name="state" value="{{ old('state', optional($hotel ?? null)->state) }}">
     </div>
-    <p class="help">This is a help text</p>
+    @error('state')
+        <p class="help is-danger">{{ $message }}</p>
+    @enderror
 </div>
 
 <div class="field">
@@ -38,3 +40,15 @@
     </div>
     <p class="help">This is a help text</p>
 </div>
+
+@if($errors->any())
+    <article class="message is-danger">
+        <div class="message-body">
+            <ul class="list-group">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </article>
+@endif

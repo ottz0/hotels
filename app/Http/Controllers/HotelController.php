@@ -35,16 +35,29 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
+        // Dump the request
         //dd($request);
 
-        $hotel = new Hotel();
-        $hotel->name = $request->input('name');
-        $hotel->address = $request->input('address');
-        $hotel->postcode = $request->input('postcode');
-        $hotel->state = $request->input('state');
-        $hotel->star_rating = $request->input('star_rating');
+        //Basic validate
+        $request->validate([
+            'state' => 'bail|required|max:3'
+        ]);
 
+
+        //Basic Store Method
+        // $hotel = new Hotel();
+        // $hotel->name = $request->input('name');
+        // $hotel->address = $request->input('address');
+        // $hotel->postcode = $request->input('postcode');
+        // $hotel->state = $request->input('state');
+        // $hotel->star_rating = $request->input('star_rating');
+        // $hotel->save();
+
+        //Mass Assignment
+        $hotel = new Hotel(request()->all());
         $hotel->save();
+
+        $request->session()->flash('status', 'The Hotel was created');
 
         return redirect()->route('hotels.show', ['hotel' => $hotel->id]);
 
@@ -84,40 +97,50 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Hotel::insert([
-        //     'name' => $request->name,
-        //     'address' => $request->address
-        // ]);
+        $request->validate([
+            'state' => 'bail|required|max:3'
+        ]);
 
 
-        // $hotel = Hotel::updateOrCreate(
-        //     ['name' => $request('email')],
-        //     ['address' => $request('address')],
-        //     ['postcode' => $request('postcode')],
-        //     ['state' => $request('state')],
-        //     ['star_rating' => $request('star_rating')]
-        // );
-
-        $hotel = [
-            ['name' => $request('email')],
-            ['address' => $request('address')],
-            ['postcode' => $request('postcode')],
-            ['state' => $request('state')],
-            ['star_rating' => $request('star_rating')]
-        ];
-
-
-        $post = Hotel::findOrFail($id);
-        //$validated = $request->validated();
-        $post->fill($hotel);
-        $post->save();
-
-
-
-        //print_r($hotel);die;
-
+        // $hotel = Hotel::findOrFail($id);
+        // $hotel->name = $request->input('name');
+        // $hotel->address = $request->input('address');
+        // $hotel->postcode = $request->input('postcode');
+        // $hotel->state = $request->input('state');
+        // $hotel->star_rating = $request->input('star_rating');
         // $hotel->save();
 
+
+        Hotel::updateOrCreate(
+        [
+            // this first array is used to check if these fields/values exist in the db
+            // if this record exists, it will update with the 2nd array below
+            // if it doesn't exist, it will create new record with 2nd array below
+            'id' => $id
+        ],
+        [
+            // actual data to either insert or update
+            'name' => $request->input('name'),
+            'address' => $request->input('address'),
+            'postcode' => $request->input('postcode'),
+            'state' => $request->input('state'),
+            'star_rating' => $request->input('star_rating'),
+        ]);
+
+        //dd($id);
+
+
+
+
+        //$post = Hotel::findOrFail($id);
+        //$validated = $request->validated();
+        //$post->fill($hotel);
+        //$post->save();
+
+
+        $request->session()->flash('status', 'The Hotel was updated');
+
+        return redirect()->route('hotels.show', ['hotel' => $id]);
 
 
     }
