@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreHotel;
 use Illuminate\Http\Request;
 use App\Models\Hotel;
 
@@ -33,15 +34,10 @@ class HotelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreHotel $request)
     {
         // Dump the request
         //dd($request);
-
-        //Basic validate
-        $request->validate([
-            'state' => 'bail|required|max:3'
-        ]);
 
 
         //Basic Store Method
@@ -95,12 +91,8 @@ class HotelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreHotel $request, $id)
     {
-        $request->validate([
-            'state' => 'bail|required|max:3'
-        ]);
-
 
         // $hotel = Hotel::findOrFail($id);
         // $hotel->name = $request->input('name');
@@ -127,22 +119,9 @@ class HotelController extends Controller
             'star_rating' => $request->input('star_rating'),
         ]);
 
-        //dd($id);
-
-
-
-
-        //$post = Hotel::findOrFail($id);
-        //$validated = $request->validated();
-        //$post->fill($hotel);
-        //$post->save();
-
-
         $request->session()->flash('status', 'The Hotel was updated');
 
         return redirect()->route('hotels.show', ['hotel' => $id]);
-
-
     }
 
     /**
