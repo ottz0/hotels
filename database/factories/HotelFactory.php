@@ -20,7 +20,7 @@ class HotelFactory extends Factory
     {
         return [
             'name' => $this->faker->company(),
-            'street_name' => $this->faker->streetAddress(),
+            'address' => $this->faker->streetAddress(),
             'postcode' => $this->faker->postcode(),
             'state' => $this->faker->stateAbbr(),
             'star_rating' => rand(0,5),

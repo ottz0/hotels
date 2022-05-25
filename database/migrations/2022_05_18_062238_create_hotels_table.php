@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('hotels', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
-            $table->string('street_name');
+            $table->string('address');
             $table->string('postcode');
             $table->string('state', 3);
             $table->string('star_rating');
