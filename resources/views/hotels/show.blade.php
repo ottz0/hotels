@@ -8,6 +8,8 @@
                       <h2>{{ $hotel->name }}</h2>
                     <p>{{ $hotel->address }} {{$hotel->postcode}}, {{$hotel->state}}</p>
                     <p>Star Rating: {{$hotel->star_rating}}</p>
+
+                    {{$hotel->hotelFacilities->parking}}
                   </div>
                 </div>
                 <footer class="card-footer">

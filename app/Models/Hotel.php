@@ -13,9 +13,7 @@ class Hotel extends Model
 
     public $timestamps = false;
 
-    public function facility(){
-        return $this->hasOne('App\Models\Facility');
+    public function hotelFacilities(){
+        return $this->hasOne('App\Models\HotelFacility');
     }
-
-
 }
