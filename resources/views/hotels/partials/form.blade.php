@@ -1,4 +1,3 @@
-
 <div class="field">
     <label class="label">Hotel Name</label>
     <div class="control">
@@ -15,22 +14,26 @@
     <p class="help">This is a help text</p>
 </div>
 
-<div class="field">
-    <label class="label">Postcode</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="Postcode" name="postcode" value="{{ old('postcode', optional($hotel ?? null)->postcode) }}">
-    </div>
-    <p class="help">This is a help text</p>
-</div>
+<div class="field is-horizontal">
+    <div class="field-body">
+        <div class="field">
+            <label class="label">Postcode</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Postcode" name="postcode" value="{{ old('postcode', optional($hotel ?? null)->postcode) }}">
+            </div>
+            <p class="help">This is a help text</p>
+        </div>
 
-<div class="field">
-    <label class="label">State</label>
-    <div class="control">
-        <input class="input @error('state') is-danger @enderror" type="text" placeholder="State" name="state" value="{{ old('state', optional($hotel ?? null)->state) }}">
+        <div class="field">
+            <label class="label">State</label>
+            <div class="control">
+                <input class="input @error('state') is-danger @enderror" type="text" placeholder="State" name="state" value="{{ old('state', optional($hotel ?? null)->state) }}">
+            </div>
+            @error('state')
+                <p class="help is-danger">{{ $message }}</p>
+            @enderror
+        </div>
     </div>
-    @error('state')
-        <p class="help is-danger">{{ $message }}</p>
-    @enderror
 </div>
 
 <div class="field">

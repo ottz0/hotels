@@ -8,8 +8,13 @@
                       <h2>{{ $hotel->name }}</h2>
                     <p>{{ $hotel->address }} {{$hotel->postcode}}, {{$hotel->state}}</p>
                     <p>Star Rating: {{$hotel->star_rating}}</p>
-
-                    {{$hotel->hotelFacilities->parking}}
+                    <hr>
+                    <h5>Hotel Facilities</h5>
+                    @if ($hotel->hotelFacilities->parking)<i class="fas fa-parking"></i> Parking @endif
+                    @if ($hotel->hotelFacilities->fitness_centre)<i class="far fa-heart-rate"></i> fitness_centre @endif
+                    @if ($hotel->hotelFacilities->bar)<i class="fas fa-cocktail"></i> Bar @endif
+                    @if ($hotel->hotelFacilities->swimming_pool)<i class="fas fa-swimming-pool"></i> Swimming Pool @endif
+                    @if ($hotel->hotelFacilities->free_wifi)<i class="fas fa-wifi"></i> Free Wifi @endif
                   </div>
                 </div>
                 <footer class="card-footer">

@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Hotel;
 use App\Models\HotelFacilitiy;
+use App\Models\HotelFacility;
 
 class DatabaseSeeder extends Seeder
 {
@@ -34,19 +35,24 @@ class DatabaseSeeder extends Seeder
         //     ['name' => 'Park Hyat Sydney'],
         // ]);
 
-        $facilities = DB::table('hotel_facilities')->insert([
-            'hotel_id' => 1,
-            'fitness_centre' => true,
-            'bar' => true,
-            'swimming_pool' => false,
-            'free_wifi' => true,
-            'parking' => true,
-        ]);
+        Hotel::factory()->count(20)->create();
+
+        HotelFacility::factory()->count(20)->create();
+
+        // $facilities = DB::table('hotel_facilities')->insert([
+        //     'hotel_id' => 1,
+        //     'fitness_centre' => true,
+        //     'bar' => true,
+        //     'swimming_pool' => false,
+        //     'free_wifi' => true,
+        //     'parking' => true,
+        // ]);
+
+        //HotelFacility::factory()->count(20)->create();
 
 
 
 
-        Hotel::factory()->count(30)->create();
 
 
 

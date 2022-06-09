@@ -19,11 +19,12 @@ class HotelFacilityFactory extends Factory
     public function definition()
     {
         return [
-            'hotel_id' => 1,
-            'fitness_centre' => true,
-            'bar' => true,
-            'swimming_pool' => false,
-            'free_wifi' => true
+            'hotel_id' => $this->faker->unique()->numberBetween(1, 20),
+            'fitness_centre' => $this->faker->boolean(),
+            'bar' => $this->faker->boolean(),
+            'swimming_pool' => $this->faker->boolean(),
+            'parking' => $this->faker->boolean(),
+            'free_wifi' => $this->faker->boolean(),
         ];
     }
 }
