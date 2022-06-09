@@ -132,6 +132,11 @@ class HotelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hotel = Hotel::findOrFail($id);
+        $hotel->delete();
+
+        session()->flash('status', 'The hotel was deleted');
+
+        return redirect()->route('hotels.index');
     }
 }
