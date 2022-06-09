@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('swimming_pool');
             $table->boolean('parking');
             $table->boolean('free_wifi');
+            $table->foreign('hotel_id')->references('id')->on('hotels');
         });
     }
 

@@ -12,4 +12,10 @@ class Hotel extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function facility(){
+        return $this->hasOne('App\Models\Facility');
+    }
+
+
 }

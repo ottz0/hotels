@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Hotel;
+use App\Models\HotelFacilitiy;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,6 +33,15 @@ class DatabaseSeeder extends Seeder
         //     ['name' => 'Great Souther Hotel Sydney'],
         //     ['name' => 'Park Hyat Sydney'],
         // ]);
+
+        $facilities = DB::table('hotel_facilities')->insert([
+            'hotel_id' => 1,
+            'fitness_centre' => true,
+            'bar' => true,
+            'swimming_pool' => false,
+            'free_wifi' => true,
+            'parking' => true,
+        ]);
 
 
 

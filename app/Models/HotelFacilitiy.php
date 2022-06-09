@@ -10,4 +10,8 @@ class HotelFacilitiy extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function hotel(){
+        return $this->belongsTo('App\Models\Hotel');
+    }
 }
