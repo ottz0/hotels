@@ -179,22 +179,41 @@ class HotelController extends Controller
         // $hotel->star_rating = $request->input('star_rating');
         // $hotel->save();
 
+        $hotel = Hotel::with('hotelFacilities')->findOrFail($id);
+        $hotel->name = $request->input('name');
+        $hotel->address = $request->input('address');
+        $hotel->postcode = $request->input('postcode');
+        $hotel->state = $request->input('state');
+        $hotel->star_rating = $request->input('star_rating');
 
-        Hotel::updateOrCreate(
-        [
-            // this first array is used to check if these fields/values exist in the db
-            // if this record exists, it will update with the 2nd array below
-            // if it doesn't exist, it will create new record with 2nd array below
-            'id' => $id
-        ],
-        [
-            // actual data to either insert or update
-            'name' => $request->input('name'),
-            'address' => $request->input('address'),
-            'postcode' => $request->input('postcode'),
-            'state' => $request->input('state'),
-            'star_rating' => $request->input('star_rating'),
+        //Save the hotel first
+        $hotel->save();
+
+        // Now update the relation - the method in within the relation (hotelFacilities)
+        $hotel->hotelFacilities->update([
+            'hotel_id' => $hotel->id,
+            'fitness_centre' => $request->has('fitness_centre') ? 1 : 0,
+            'bar' => $request->has('bar') ? 1 : 0,
+            'parking' => $request->has('parking') ? 1 : 0,
+            'free_wifi' => $request->has('free_wifi') ? 1 : 0,
+            'swimming_pool' => $request->has('swimming_pool') ? 1 : 0
         ]);
+
+        // Hotel::updateOrCreate(
+        // [
+        //     // this first array is used to check if these fields/values exist in the db
+        //     // if this record exists, it will update with the 2nd array below
+        //     // if it doesn't exist, it will create new record with 2nd array below
+        //     'id' => $id
+        // ],
+        // [
+        //     // actual data to either insert or update
+        //     'name' => $request->input('name'),
+        //     'address' => $request->input('address'),
+        //     'postcode' => $request->input('postcode'),
+        //     'state' => $request->input('state'),
+        //     'star_rating' => $request->input('star_rating'),
+        // ]);
 
         $request->session()->flash('status', 'The Hotel was updated');
 
