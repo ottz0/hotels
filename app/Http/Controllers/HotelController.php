@@ -119,15 +119,6 @@ class HotelController extends Controller
         $request->session()->flash('status', 'A new hotel record was created');
         return redirect()->back();
 
-
-
-
-
-
-
-
-
-
     }
 
     /**
@@ -157,7 +148,7 @@ class HotelController extends Controller
         //return view('hotels.edit', ['hotel' => $this->$hotel]);
 
         return view('hotels.edit', [
-            'hotel' => Hotel::with('hotelFacilities')->where('id', $id)->get()
+            'hotel' => Hotel::with('hotelFacilities')->where('id', $id)->first()
         ]);
     }
 
@@ -170,15 +161,6 @@ class HotelController extends Controller
      */
     public function update(StoreHotel $request, $id)
     {
-
-        // $hotel = Hotel::findOrFail($id);
-        // $hotel->name = $request->input('name');
-        // $hotel->address = $request->input('address');
-        // $hotel->postcode = $request->input('postcode');
-        // $hotel->state = $request->input('state');
-        // $hotel->star_rating = $request->input('star_rating');
-        // $hotel->save();
-
         $hotel = Hotel::with('hotelFacilities')->findOrFail($id);
         $hotel->name = $request->input('name');
         $hotel->address = $request->input('address');
@@ -198,22 +180,6 @@ class HotelController extends Controller
             'free_wifi' => $request->has('free_wifi') ? 1 : 0,
             'swimming_pool' => $request->has('swimming_pool') ? 1 : 0
         ]);
-
-        // Hotel::updateOrCreate(
-        // [
-        //     // this first array is used to check if these fields/values exist in the db
-        //     // if this record exists, it will update with the 2nd array below
-        //     // if it doesn't exist, it will create new record with 2nd array below
-        //     'id' => $id
-        // ],
-        // [
-        //     // actual data to either insert or update
-        //     'name' => $request->input('name'),
-        //     'address' => $request->input('address'),
-        //     'postcode' => $request->input('postcode'),
-        //     'state' => $request->input('state'),
-        //     'star_rating' => $request->input('star_rating'),
-        // ]);
 
         $request->session()->flash('status', 'The Hotel was updated');
 
