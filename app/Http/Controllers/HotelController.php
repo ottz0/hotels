@@ -92,28 +92,31 @@ class HotelController extends Controller
 
         DB::beginTransaction();
         try {
-        $hotel = Hotel::create([
-            'name' => $request->input('name'),
-            'address' => $request->input('address'),
-            'postcode' => $request->input('postcode'),
-            'state' => $request->input('state'),
-            'star_rating' => $request->input('star_rating'),
-        ]);
+            $hotel = Hotel::create([
+                'name' => $request->input('name'),
+                'address' => $request->input('address'),
+                'postcode' => $request->input('postcode'),
+                'state' => $request->input('state'),
+                'star_rating' => $request->input('star_rating'),
+            ]);
 
-        HotelFacility::create([
-            'hotel_id' => $hotel->id,
-            'fitness_centre' => $request->has('fitness_centre') ? 1 : 0,
-            'bar' => $request->has('bar') ? 1 : 0,
-            'parking' => $request->has('parking') ? 1 : 0,
-            'free_wifi' => $request->has('free_wifi') ? 1 : 0,
-            'swimming_pool' => $request->has('swimming_pool') ? 1 : 0
-        ]);
+            HotelFacility::create([
+                'hotel_id' => $hotel->id,
+                'fitness_centre' => $request->has('fitness_centre') ? 1 : 0,
+                'bar' => $request->has('bar') ? 1 : 0,
+                'parking' => $request->has('parking') ? 1 : 0,
+                'free_wifi' => $request->has('free_wifi') ? 1 : 0,
+                'swimming_pool' => $request->has('swimming_pool') ? 1 : 0
+            ]);
 
-        DB::commit();
-        } catch (Exception $ex) {
-        DB::rollBack();
+            DB::commit();
+
+        }catch (Exception $ex) {
+
+            DB::rollBack();
+
         }
-
+        $request->session()->flash('status', 'A new hotel record was created');
         return redirect()->back();
 
 
@@ -136,7 +139,7 @@ class HotelController extends Controller
     public function show($id)
     {
         return view('hotels.show', [
-            'hotel' => Hotel::with('hotelFacilities')->findOrFail($id)
+            'hotel' => Hotel::with('HotelFacilities')->findOrFail($id)
         ]);
     }
 
@@ -148,7 +151,14 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
-        return view('hotels.edit', ['hotel' => Hotel::findOrFail($id)]);
+
+        //$hotel = Hotel::with('hotelFacilities')->where('id', $id)->get();
+
+        //return view('hotels.edit', ['hotel' => $this->$hotel]);
+
+        return view('hotels.edit', [
+            'hotel' => Hotel::with('hotelFacilities')->where('id', $id)->get()
+        ]);
     }
 
     /**
