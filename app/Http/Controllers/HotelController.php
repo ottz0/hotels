@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHotel;
 use Illuminate\Http\Request;
 use App\Models\Hotel;
+use App\Models\HotelFacility;
+use Illuminate\Support\Facades\DB;
+
 
 class HotelController extends Controller
 {
@@ -47,15 +50,79 @@ class HotelController extends Controller
         // $hotel->postcode = $request->input('postcode');
         // $hotel->state = $request->input('state');
         // $hotel->star_rating = $request->input('star_rating');
-        // $hotel->save();
+        //$hotel->save();
+
+        // $facility = new HotelFacility();
+        // $facility->fitness_centre = true;
+        // $facility->bar = true;
+        // $facility->swimming_pool = false;
+        // $facility->parking = true;
+        // $facility->free_wifi = true;
+        //$facility->save();
 
         //Mass Assignment
-        $hotel = new Hotel(request()->all());
-        $hotel->save();
+        // $hotel = new Hotel(request()->all());
+        // $hotel->save();
+        // $request->session()->flash('status', 'The Hotel was created');
+        // return redirect()->route('hotels.show', ['hotel' => $hotel->id]);
 
-        $request->session()->flash('status', 'The Hotel was created');
 
-        return redirect()->route('hotels.show', ['hotel' => $hotel->id]);
+        // DB::transaction(function () use ($request) {
+        //     $hotel = Hotel::create([
+        //         'name' => $request->input('name'),
+        //         'address' => $request->input('address'),
+        //         'postcode' => $request->input('postcode'),
+        //         'state' => $request->input('state'),
+        //         'star_rating' => $request->input('star_rating'),
+        //     ]);
+
+        //     $facility = HotelFacility::create([
+        //         'hotel_id' => 39,
+        //         'fitness_centre' => true,
+        //         'bar' => false,
+        //         'bar' => true,
+        //         'parking' => true,
+        //         'free_wifi' => true,
+        //         'swimming_pool' => true,
+        //     ]);
+        //     Hotel::find($hotel->id)->facility()->save($facility);
+        // });
+
+        //return redirect()->back();
+
+        DB::beginTransaction();
+        try {
+        $hotel = Hotel::create([
+            'name' => $request->input('name'),
+            'address' => $request->input('address'),
+            'postcode' => $request->input('postcode'),
+            'state' => $request->input('state'),
+            'star_rating' => $request->input('star_rating'),
+        ]);
+
+        HotelFacility::create([
+            'hotel_id' => $hotel->id,
+            'fitness_centre' => $request->has('fitness_centre') ? 1 : 0,
+            'bar' => $request->has('bar') ? 1 : 0,
+            'parking' => $request->has('parking') ? 1 : 0,
+            'free_wifi' => $request->has('free_wifi') ? 1 : 0,
+            'swimming_pool' => $request->has('swimming_pool') ? 1 : 0
+        ]);
+
+        DB::commit();
+        } catch (Exception $ex) {
+        DB::rollBack();
+        }
+
+        return redirect()->back();
+
+
+
+
+
+
+
+
 
 
     }

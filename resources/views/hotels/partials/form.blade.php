@@ -1,3 +1,5 @@
+
+<h2 class="is-size-2">Details</h2>
 <div class="field">
     <label class="label">Hotel Name</label>
     <div class="control">
@@ -42,6 +44,32 @@
         <input class="input" type="text" placeholder="Star Rating" name="star_rating" value="{{ old('star_rating', optional($hotel ?? null)->star_rating) }}">
     </div>
     <p class="help">This is a help text</p>
+</div>
+
+<hr />
+
+<h2 class="is-size-2">Facilities</h2>
+<div class="pb-5">
+    <label class="checkbox">
+        <input type="checkbox" name="fitness_centre" value="on">
+        Fitness Centre
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="bar" value="on">
+        Bar
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="swimming_pool" value="on">
+        Swimming Pool
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="parking" value="on">
+        Parking
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" name="free_wifi" value="on">
+        Free Wifi
+      </label>
 </div>
 
 @if($errors->any())
