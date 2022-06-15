@@ -25,11 +25,16 @@
                         @method('DELETE')
                         <input type="submit" value="Delete!" class="button is-danger">
                     </form>
-
-
-
                   </footer>
               </div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+            <h3 class="is-size-3">Hotel Reviews</h3>
+            @foreach ($hotel->hotelReviews as $review)
+                <p>{{ $review->review }}</p> <br />
+            @endforeach
         </div>
     </div>
 @endsection

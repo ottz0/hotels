@@ -130,7 +130,7 @@ class HotelController extends Controller
     public function show($id)
     {
         return view('hotels.show', [
-            'hotel' => Hotel::with('HotelFacilities')->findOrFail($id)
+            'hotel' => Hotel::with('hotelFacilities', 'hotelReviews')->findOrFail($id)
         ]);
     }
 
