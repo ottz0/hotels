@@ -6,8 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Hotel;
-use App\Models\HotelFacilitiy;
 use App\Models\HotelFacility;
+use App\Models\Review;
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,6 +49,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         //HotelFacility::factory()->count(20)->create();
+
+        Review::factory()->count(50)->create();
 
 
 

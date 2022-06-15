@@ -16,4 +16,8 @@ class Hotel extends Model
     public function hotelFacilities(){
         return $this->hasOne('App\Models\HotelFacility');
     }
+
+    public function hotelReviews(){
+        return $this->hasMany('App\Models\Review');
+    }
 }
