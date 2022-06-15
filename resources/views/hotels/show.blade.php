@@ -20,7 +20,14 @@
                 <footer class="card-footer">
                     <a href="/hotels" class="card-footer-item">Back to hotels</a>
                     <a href="{{ route('hotels.edit', ['hotel' => $hotel->id]) }}" class="card-footer-item">Edit hotel</a>
-                    <a href="{{ route('hotels.destroy', ['hotel' => $hotel->id]) }}" class="card-footer-item">Delete hotel</a>
+                    <form class="d-inline" action="{{ route('hotels.destroy', ['hotel' => $hotel->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete!" class="button is-danger">
+                    </form>
+
+
+
                   </footer>
               </div>
         </div>
