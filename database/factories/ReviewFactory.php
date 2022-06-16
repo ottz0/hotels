@@ -19,7 +19,7 @@ class ReviewFactory extends Factory
         return [
             'hotel_id' => $this->faker->numberBetween(1, 20),
             'review' => $this->faker->text,
-            'date_of_stay' => $this->faker->date($format = 'Y-m-d', $max='now'),
+            'date_of_stay' => $this->faker->dateTimeThisDecade($max = 'now', $timezone = null)
         ];
     }
 }
