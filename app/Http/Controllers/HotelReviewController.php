@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Review;
 use App\Models\Hotel;
+use Illuminate\Support\Facades\DB;
 
 class HotelReviewController extends Controller
 {
@@ -41,9 +42,27 @@ class HotelReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $hotel_id)
     {
-        //
+        //dd($hotel_id, $request->date_of_stay, $request->review);
+
+        DB::beginTransaction();
+        try {
+            Review::create([
+                'hotel_id' => $hotel_id,
+                'date_of_stay' => $request->date_of_stay,
+                'review' => $request->review,
+            ]);
+
+            DB::commit();
+
+        }catch (Exception $ex) {
+
+            DB::rollBack();
+
+        }
+        $request->session()->flash('status', 'A new review was created');
+        return redirect()->back();
     }
 
     /**
@@ -69,7 +88,7 @@ class HotelReviewController extends Controller
 
         return view('reviews.edit', [
             'hotel' => $hotel,
-            'review' => $hotel->hotelReviews()->where('id', $review_id)->get()
+            'review' => $hotel->hotelReviews()->where('id', $review_id)->first()
         ]);
     }
 
@@ -80,9 +99,23 @@ class HotelReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $hotel_id, $review_id)
     {
-        //
+        //dd($request);
+        //$review = Hotel::with('hotelReviews')->findOrFail($hotel_id);
+
+        $review = Review::find($review_id);
+
+        // Now update the relation - the method in within the relation (hotelFacilities)
+        $review->update([
+            'date_of_stay' => $request->date_of_stay,
+            'review' => $request->review,
+        ]);
+        $request->session()->flash('status', 'The Hotel review was updated');
+
+        return redirect()->route('hotels.show', ['hotel' => $hotel_id]);
+
+
     }
 
     /**

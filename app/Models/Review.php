@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    protected $fillable = ['hotel_id', 'date_of_stay', 'review'];
+
     use HasFactory;
 
     public function hotel(){

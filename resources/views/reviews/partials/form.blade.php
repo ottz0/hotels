@@ -4,15 +4,15 @@
 <div class="field">
     <label class="label">Date of stay</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Date of stay" name="date-of-stay" value="{{ old('date_of_stay', optional($review[0] ?? null)->date_of_stay) }}">
+        <input class="input" type="text" placeholder="Date of stay" name="date_of_stay" value="{{ old('date_of_stay', optional($review ?? null)->date_of_stay) }}">
     </div>
     <p class="help">This is a help text</p>
 </div>
 
 <div class="field">
-    <label class="label">Hotel Name</label>
+    <label class="label">Review</label>
     <div class="control">
-        <textarea class="textarea" placeholder="e.g. Hello world">{{ old('review', optional($review[0] ?? null)->review) }}</textarea>
+        <textarea class="textarea" name="review" value="{{ old('review', optional($review ?? null)->review) }}">{{ old('review', optional($review ?? null)->review) }}</textarea>
     </div>
     <p class="help">This is a help text</p>
 </div>
