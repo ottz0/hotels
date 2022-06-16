@@ -124,8 +124,16 @@ class HotelReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($hotel_id, $review_id)
     {
-        //
+        //dd($hotel_id, $review_id);
+
+        $review = Review::findOrFail($review_id);
+
+        $review->delete();
+
+        session()->flash('status', 'The Review was deleted');
+
+        return redirect()->route('hotels.index');
     }
 }

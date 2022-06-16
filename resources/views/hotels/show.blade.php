@@ -36,6 +36,11 @@
             @foreach ($hotel->hotelReviews as $review)
                 <p>{{ $review->review }}</p>
                 <a href="{{ url("/hotels/{$hotel->id}/reviews/{$review->id}/edit") }}">Edit Review</a>
+                <form class="d-inline" action="{{ route('hotels.reviews.destroy', ['hotel' => $hotel->id, 'review' => $review->id ]) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Delete Review" class="button is-danger is-small">
+                </form>
                 <br />
                 <br />
             @endforeach
