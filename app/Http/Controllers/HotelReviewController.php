@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ReviewController extends Controller
+use App\Models\Review;
+use App\Models\Hotel;
+
+class HotelReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Hotel $hotel)
     {
-        //
+        return view('reviews.index', [
+            'reviews' => Review::get()
+        ]);
     }
 
     /**
@@ -21,9 +26,13 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('reviews.create', [
+            'hotel' => Hotel::findOrFail($id)
+        ]);
+
+
     }
 
     /**
@@ -54,9 +63,14 @@ class ReviewController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $review_id)
     {
-        //
+        $hotel = Hotel::find($id);
+
+        return view('reviews.edit', [
+            'hotel' => $hotel,
+            'review' => $hotel->hotelReviews()->where('id', $review_id)->get()
+        ]);
     }
 
     /**

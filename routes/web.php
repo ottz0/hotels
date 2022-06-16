@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\HotelReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +24,5 @@ use App\Http\Controllers\HotelController;
 //Route::get('/', [HomeController::class, 'home'])->name('welcome');
 
 Route::resource('hotels', HotelController::class);
+
+Route::resource('hotels.reviews', HotelReviewController::class);

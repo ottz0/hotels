@@ -31,9 +31,13 @@
     </div>
     <div class="columns">
         <div class="column is-half is-offset-one-quarter">
+            <a href="{{ url("/hotels/{$hotel->id}/reviews/create") }}">Create a review</a>
             <h3 class="is-size-3">Hotel Reviews</h3>
             @foreach ($hotel->hotelReviews as $review)
-                <p>{{ $review->review }}</p> <br />
+                <p>{{ $review->review }}</p>
+                <a href="{{ url("/hotels/{$hotel->id}/reviews/{$review->id}/edit") }}">Edit Review</a>
+                <br />
+                <br />
             @endforeach
         </div>
     </div>

@@ -198,8 +198,9 @@ class HotelController extends Controller
 
         $hotel->hotelFacilities()->delete();
 
-        $hotel->delete();
+        $hotel->hotelReviews()->delete();
 
+        $hotel->delete();
 
         session()->flash('status', 'The hotel was deleted');
 
