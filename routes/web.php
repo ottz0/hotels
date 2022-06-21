@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelReviewController;
-use App\Http\Controllers\EpsRapidController;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -23,7 +23,9 @@ use App\Http\Controllers\EpsRapidController;
 // });
 
 
-Route::get('/', [EpsRapidController::class, 'test'])->name('welcome');
+//Route::get('/', [EpsRapidController::class, 'test'])->name('welcome');
+
+Route::get('/', [HomeController::class, 'home'])->name('welcome');
 
 Route::resource('hotels', HotelController::class);
 
