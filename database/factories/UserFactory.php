@@ -26,6 +26,14 @@ class UserFactory extends Factory
         ];
     }
 
+    public function default()
+    {
+        return $this->state([
+            'name' => 'Steven Watson',
+            'email' => 'ottz@aapt.net.au', //password - password
+        ]);
+    }
+
     /**
      * Indicate that the model's email address should be unverified.
      *
