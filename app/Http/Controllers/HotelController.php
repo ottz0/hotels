@@ -146,9 +146,12 @@ class HotelController extends Controller
         //$hotel = Hotel::with('hotelFacilities')->where('id', $id)->get();
 
         //return view('hotels.edit', ['hotel' => $this->$hotel]);
+        $hotel = Hotel::with('hotelFacilities')->where('id', $id)->first();
+
+        $this->authorize('hotels.update', $hotel);
 
         return view('hotels.edit', [
-            'hotel' => Hotel::with('hotelFacilities')->where('id', $id)->first()
+            'hotel' => $hotel
         ]);
     }
 
@@ -195,6 +198,8 @@ class HotelController extends Controller
     public function destroy($id)
     {
         $hotel = Hotel::findOrFail($id);
+
+        $this->authorize('hotels.update', $hotel);
 
         $hotel->hotelFacilities()->delete();
 
