@@ -28,6 +28,10 @@ class HotelController extends Controller
      */
     public function create()
     {
+        $hotel = new Hotel();
+
+        $this->authorize('hotels.update', $hotel);
+
         return view('hotels.create');
     }
 

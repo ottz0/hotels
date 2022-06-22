@@ -30,7 +30,7 @@
 
             <div id="navbarBasicExample" class="navbar-menu">
                 <div class="navbar-start">
-                    <a href="#" class="navbar-item">Home</a>
+                    <a href="/" class="navbar-item">Home</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">Hotel Actions</a>
                         <div class="navbar-dropdown">
