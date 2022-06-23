@@ -30,7 +30,7 @@ class HotelController extends Controller
     {
         $hotel = new Hotel();
 
-        $this->authorize('hotels.update', $hotel);
+        $this->authorize('hotels.create', $hotel);
 
         return view('hotels.create');
     }

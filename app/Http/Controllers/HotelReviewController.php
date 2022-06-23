@@ -29,8 +29,12 @@ class HotelReviewController extends Controller
      */
     public function create($id)
     {
+        $hotel = Hotel::findOrFail($id);
+
+        $this->authorize('hotels.update', $hotel);
+
         return view('reviews.create', [
-            'hotel' => Hotel::findOrFail($id)
+            'hotel' => $hotel
         ]);
 
 

@@ -1,0 +1,116 @@
+@import "~bulma/sass/utilities/_all";
+
+$family-primary: "Roboto", sans-serif;
+$body-family: "Roboto", sans-serif;
+
+// Set your colors
+$primary: #0769ba;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+
+$success: #00ce7d;
+$light  : $white-ter !default;
+$dark   : $grey-darker !default;
+
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(
+    (
+        "white": (
+            $white,
+            $black,
+        ),
+        "black": (
+            $black,
+            $white,
+        ),
+        "light": (
+            $light,
+            $light-invert,
+        ),
+        "dark": (
+            $dark,
+            $dark-invert,
+        ),
+        "primary": (
+            $primary,
+            $primary-invert,
+            $primary-light,
+            $primary-dark,
+        ),
+        "link": (
+            $link,
+            $link-invert,
+            $link-light,
+            $link-dark,
+        ),
+        "info": (
+            $info,
+            $info-invert,
+            $info-light,
+            $info-dark,
+        ),
+        "success": (
+            $success,
+            $success-invert,
+            $success-light,
+            $success-dark,
+        ),
+        "warning": (
+            $warning,
+            $warning-invert,
+            $warning-light,
+            $warning-dark,
+        ),
+        "danger": (
+            $danger,
+            $danger-invert,
+            $danger-light,
+            $danger-dark,
+        ),
+    ),
+    $custom-colors
+);
+
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+$subtitle-color:#363636;
+// Set your font sizes
+// $size-1: 10.25rem !default;
+// $size-2: 7rem !default;
+// $size-3: 2.125rem !default;
+// $size-4: 1.625rem !default;
+// $size-5: 1.125rem !default;
+// $size-6: 1rem !default;
+// $size-7: 0.75rem !default;
+
+
+$title-color: #363636;
+
+$body-weight: 300;
+$body-font-size: 1.125rem;
+
+$footer-background-color: $primary;
+$footer-color: white;
+
+$title-weight: $weight-bold;
+$subtitle-weight: $weight-normal;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+
+
