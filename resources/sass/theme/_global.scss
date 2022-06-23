@@ -1,0 +1,269 @@
+/*
+************
+    SAU Styles - Global
+    -----------------------
+    Main site wide global styles
+************
+*/
+
+// @font-face {
+// 	font-family: "sau-roboto";
+// 	src: url("/fonts/roboto/Roboto-Light.ttf") format("truetype");
+// 	font-style: normal;
+// 	font-weight: normal;
+//     font-display: swap;
+// }
+
+#page-wrapper{
+    min-height: calc(100vh - 150px);
+}
+footer {
+    height: 150px;
+}
+.sau-outline{
+    border: 1px solid red;
+}
+
+hr{
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+}
+.v-btn {
+    text-transform: none;
+    font-size:1rem !important;
+}
+.display-4, .display-3, .display-2, .display-1, .headline, .title{
+    font-weight:300 !important;
+}
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+a:active{
+    text-decoration:none;
+}
+.sau-u-lnk-hvr--white{
+    &:link {
+        color:#fff;
+        text-decoration:none;
+    }
+    &:visited {
+        color:#fff;
+        text-decoration:none;
+    }
+    &:hover {
+        color:#ececec;
+        text-decoration:underline;
+    }
+    &:active {
+        color:#fff;
+        text-decoration:none;
+    }
+}
+
+.bbc{
+    background-image: url("/images/backgrounds/bg.jpg");
+    background-repeat: no-repeat;
+}
+
+.bbb{
+    background: url("/images/backgrounds/bg-triangle.gif");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+
+
+.sau-bg-angle{
+    background: url("/images/backgrounds/bg-sau.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+
+
+strong{
+    font-weight: 500 !important;
+}
+
+.sau-outline{
+    border: 1px solid red;
+}
+
+.ccd{
+    background-image: url("/images/backgrounds/browser.gif");
+    background-repeat: no-repeat;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.sau-form-fullpage{
+    height:100vh;
+    padding:0;
+    margin:0;
+    position: relative;
+    overflow-x: hidden;
+    .sau-form-fullpage__left-col{
+        height:100vh;
+        &.is-dark{
+            background-color: #071a2c;
+        }
+        &.is-gray{
+            background-color: #F6F6F6;
+            
+        }
+        &.has-background{
+            background-image: url("/images/backgrounds/bg-sau.png");
+            background-repeat: no-repeat, repeat;
+        }
+        .left-col-top{
+            width:100%;
+            height:50vh;
+            background-color: #061b2c;
+        }
+        .left-col-middle{
+            position:absolute; 
+            z-index:5; 
+            width:50%; 
+            text-align:center;
+            &.is-cta{
+                top:20%;
+            }
+        }
+        .left-col-bottom{
+            width:100%; 
+            background-color:#f6f6f6; 
+            height:50vh;
+        }
+    }
+    .sau-form-fullpage__right-col{
+        background-color:#fff;
+        height:100vh;
+        margin-top:50px;
+        h2{
+            font-size: 48px;
+            line-height: 52px;;
+            font-weight: 500;
+
+        }
+        .sau-form-fullpage__right-col-inner{
+            padding:40px 95px 40px 85px;
+        }
+    }
+}
+.sau-modal-full-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index:999;
+    height: 85px;
+    width:85px;
+    background-color: #f6f6f6;
+    display:inline-block;
+    text-align: center;
+    .sau-modal-full-close__btn{
+        background-color:#f6f6f6;
+        line-height: 50px;
+        cursor: pointer;
+        &:hover{
+            color:#a5a5a5;
+        }
+    }
+}
+
+
+#sau-network-map{
+    background-image: url("/images/backgrounds/map.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    .sau-mapbox{
+        background-color: rgba(0, 0, 0, 0.3);
+        padding:10px 40px;
+        p{
+            color:#fff;
+            font-weight: 500;
+            font-size: 22px;
+            padding-bottom:2px;
+        }
+        width: 100%;
+        a{
+            display: block;
+            color: #fff;
+        }
+        &:link{
+            color: #fff;
+        }
+    }
+}
+#sau-nimble-storage{
+    background-image: url("/images/backgrounds/nimble-storage.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    height:900px;
+    background-color:#000;
+    .main-link{
+        position: relative;
+        color: #fff;
+        top:110px;
+        width:400px;
+        background-color: rgba(0, 0, 0, 0.3);
+        &:hover{
+            background-color: #1dc9b0;
+            cursor:pointer;
+        }
+    }
+}
+#data-centres{
+    background-color: #042041;
+    .block1{
+        background-image: url("/images/backgrounds/equinix.jpg");
+        background-repeat: no-repeat, repeat;
+        background-position: center;
+        height:450px;
+    }
+    .block2{
+        background-image: url("/images/backgrounds/equinix-inside.jpg");
+        background-repeat: no-repeat, repeat;
+        background-position: center;
+        height:450px;
+    }
+    .block3{
+        padding:100px;
+        text-align: center;
+    }
+}
+
+details {
+    user-select: none;
+  }
+  
+  details>summary span.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+  
+  details[open] summary span.icon {
+    transform: rotate(180deg);
+  }
+  
+  summary {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }

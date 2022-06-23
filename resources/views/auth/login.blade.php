@@ -1,102 +1,90 @@
-@extends('layouts.app')
+@extends('layouts.blank')
 
 @section('content')
-
-
-<div class="container mx-4" style="padding-top:200px;">
-    <div class="columns is-vcentered">
-        <div class="column is-3 is-offset-4" style="border: 1px solid red;">
-            <div class="has-text-centered">
-                <h1 class="is-size-2 pb-3">Login</h1>
-
-
-
+<div class="columns">
+    <div class="column is-8 is-offset-2">
+        <nav class="level" style="position:relative; top:150px;">
+            <div class="level-item has-text-centered">
+              <figure><img src="{{ asset('/images/sau-brandmark-horizontal-blue.svg') }}" width="320" alt="Servers Australia"></figure>
+            </div>
+        </nav>
+    </div>
+</div>
+<section class="container">
+    <div class="columns is-multiline">
+      <div class="column is-8 is-offset-2 register">
+        <div class="columns">
+            <div class="column left">
+                <h1 class="is-size-1 has-text-weight-bold" style="line-height:46px;">MySAU Online Portal</h1>
+                <h2 class="subtitle colored is-4">Online access to purchase and configure your services</h2>
+                <p>Start, stop and power cycle your server, show CPU usage and event logs. Access payment and billing information. Get free access to our MySAU online Portal.</p>
+            </div>
+            <div class="column right has-text-centered">
+                <h1 class="is-size-4 has-text-weight-medium">Log in to MySAU</h1>
+                <p class="description">Log in to the MySau online portal</p>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-
-                    {{-- <div class="field">
-                        <div class="control is-medium">
-                            <label class="label" for="email">{{ __('Email Address') }}</label>
-                            <input id="email" type="email" class="input is-medium" placeholder="">
+                    <div class="field">
+                        <div class="control">
+                            <input class="input is-large" name="email" type="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}" autofocus="">
                         </div>
+                        @error('email')
+                            <p class="help is-danger">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="field">
-                        <div class="control is-medium">
-                            <label class="label" for="email">{{ __('Email Address') }}</label>
-                            <input id="password" type="password" class="input is-medium" placeholder="">
+                        <div class="control">
+                            <input class="input is-large" name="password" type="password" placeholder="{{ __('Password') }}">
                         </div>
-                    </div> --}}
-
-
-
-
-
-
-
-                    <div class="row mb-3">
-                        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+                        @error('password')
+                            <p class="help is-danger">{{ $message }}</p>
+                        @enderror
                     </div>
-
-                    <div class="row mb-3">
-                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
+                    <div class="field has-text-centered">
+                        <label class="checkbox">
+                            <input id="remember" {{ old('remember') ? 'checked' : '' }} name="remember" type="checkbox">{{ __(' Remember Me') }}</label>
                     </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-6 offset-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Login') }}
-                            </button>
-
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            @endif
-                        </div>
-                    </div>
+                    <button class="button is-block is-primary is-large is-fullwidth">{{ __('Log In') }}</button>
+                    <p class="has-text-grey sau-u-font__size--sm mt-4"><a href="/register">Sign Up</a></p>
+                    <p class="has-text-grey sau-u-font__size--sm"> @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    @endif</p>
                 </form>
-
-
-
-
-
-
             </div>
         </div>
+      </div>
+      <div class="column is-8 is-offset-2">
+        <br>
+        <nav class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span> &emsp;
+              <span class="icon">
+                <i class="fab fa-facebook"></i>
+              </span> &emsp;
+              <span class="icon">
+                <i class="fab fa-instagram"></i>
+              </span> &emsp;
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span> &emsp;
+              <span class="icon">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+          <div class="level-right">
+            <small class="level-item" style="color: var(--textLight)">
+              &copy; Servers Austrlalia &reg;. All Rights Reserved.
+            </small>
+          </div>
+        </nav>
+      </div>
     </div>
-</div>
-
+  </section>
 @endsection

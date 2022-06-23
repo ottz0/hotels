@@ -1,0 +1,60 @@
+/*
+************
+    SAU Styles - Tables
+************
+*/
+.c-table{
+    width:100%;
+    font-weight:300;
+    border-collapse: collapse;
+    tr, th{
+        border-bottom:1px solid #dedede;
+        text-align:left;
+        vertical-align: middle;
+        font-weight:300;
+    }
+    thead{
+        border-bottom:3px solid #dedede;
+        tr th{
+            font-size:1.25rem;
+        }
+        th{
+            padding:20px 0;
+            font-weight:500;
+        }
+        
+    }
+    td{
+        padding:10px 0; 
+        font-weight:300;
+    }
+    &.c-table--bordered-outside{
+        border:1px solid #dedede;
+        thead, td, th{
+            padding:10px 20px;
+        }
+    }
+    &.c-table--bordered{
+        thead, td, th{
+            padding:10px 20px;
+        }
+        td, th{
+            border:1px solid #dedede !important;
+        }
+    }
+    &.c-table--striped{
+        thead, td, th{
+            padding:10px 20px;
+        }
+        tbody tr:nth-child(odd) td{
+            background-color: #ececec;
+        }
+    }
+    .c-table__section{
+        border-bottom:3px solid #dedede;
+        font-size:1.25rem;
+        padding:20px 0;
+        font-weight:500;
+    }
+
+}

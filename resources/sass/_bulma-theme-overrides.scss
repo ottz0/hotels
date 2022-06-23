@@ -1,0 +1,86 @@
+
+
+// Update Bulma's global variables
+body {
+    font-family: "Roboto", sans-serif !important;
+}
+
+
+h1{
+    font-size:58px;
+    font-weight: 600;
+    color: #141414;
+    line-height: 64px;
+}
+h2{
+    font-size:52px;
+    font-weight: 600;
+    color: #141414;
+    line-height: 58px;
+}
+h3{
+    font-size:40px;
+}
+h4{
+    font-size:36px;
+}
+h5{
+    font-size:32px;
+}
+h6{
+    font-size:28px;
+}
+
+.label{
+    font-weight: 400;
+}
+
+.container{
+    @media only screen and (max-width: 768px) {
+        padding:0 20px 0 20px;
+    }
+    @media only screen and (min-width: 769px) {
+        padding:0 20px 0 20px; 
+    }
+}
+
+.sau-u-subtitle{
+    font-size:23px;
+    font-weight: 300;
+    line-height: 32px;
+    color: #141414;
+    p{
+        padding-bottom:28px;
+        &:last{
+            padding-bottom:0;
+        }
+    }
+}
+
+.subtitle-2{
+    p{
+        padding-bottom:22px;
+    }
+}
+
+.card-header-title{
+    font-weight: 400;
+}
+.collapse-content{
+    p{
+        font-size:18px;
+    }
+    ul{
+        list-style-type: none;
+        font-size:18px;
+    }
+}
+
+a{
+    &.button{
+        font-weight: 400;
+    }
+    &.button:hover{
+        text-decoration: none !important;
+    }
+}
