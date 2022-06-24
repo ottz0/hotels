@@ -4,7 +4,7 @@
 ************
 */
 .breaker{
-    height:1px; 
+    height:1px;
     background-color:#0D7DD8;
     margin-bottom : 5px;
 }
@@ -45,7 +45,7 @@
     }
     &.sau-c-page-hero__dark{
         background: url("/images/backgrounds/page-hero-left-dark.gif") top left no-repeat, url("/images/backgrounds/page-hero-right-dark.gif") top right no-repeat, #031f37;
-        h1, p, .sau-u-subtitle{
+        .sau-u-subtitle{
             color: #fff;
         }
         .sau-c-nav-mega__menu-items{
@@ -158,7 +158,7 @@
                     color: #343434;
                 }
             }
-            
+
         }
         .sau-c-nav-menu__header{
             text-align: center;
@@ -175,7 +175,7 @@
             list-style: none;
             padding:0;
             margin:0;
-            float:right;                
+            float:right;
             li{
                 display: inline-block;
                 font-size:14px;
@@ -231,7 +231,7 @@
                 width: 100%;
                 left: 0;
                 right:0;
-                display:block; 
+                display:block;
                 visibility: hidden;
                 opacity:0;
                 margin-top: 19px;
@@ -265,7 +265,7 @@
         background-color: #fff;
         min-height: 280px;
         border-radius: 15px;
-        -webkit-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.2); 
+        -webkit-box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.2);
         box-shadow: 0px 3px 9px 0px rgba(0,0,0,0.2);
         a{
             display:block;
@@ -295,7 +295,7 @@
             transform: rotate(0deg);
         }
         .menu-ad{
-            border-left:1px solid #e4e4e4; 
+            border-left:1px solid #e4e4e4;
             height:100%;
             margin-left:20px;
             a{

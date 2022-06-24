@@ -1,3 +1,12 @@
+
+
+.sau-c-card-shadow{
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 6px 20px 17px rgba(0,0,0,0.09);
+    box-shadow: 0px 6px 20px 17px rgba(0,0,0,0.09);
+    background-color: #fff;
+}
+
 .sau-c-server-card{
     background:#fff;
     border-radius: 6px;
@@ -5,7 +14,7 @@
         border:1px solid red;
     }
     &.is-shadow{
-        -webkit-box-shadow: 2px 2px 19px 0px rgba(0,0,0,0.11); 
+        -webkit-box-shadow: 2px 2px 19px 0px rgba(0,0,0,0.11);
         box-shadow: 2px 2px 19px 0px rgba(0,0,0,0.11);
     }
 }
@@ -26,7 +35,7 @@
         li{
             list-style-type:none;
             padding-bottom:3px !important;
-            font-size: 14px; 
+            font-size: 14px;
         }
     }
     p{

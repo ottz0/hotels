@@ -24,7 +24,7 @@
     color:#7c7c7c !important;
 }
 .sau-u-font__color--facebook{
-    color:#3b5998 !important; 
+    color:#3b5998 !important;
 }
 .sau-u-font__color--linkedin{
     color:#0e76a8 !important;
@@ -107,14 +107,14 @@
             padding-bottom:10px;
         }
     }
-    
+
 }
 .sau-u-bullets{
     list-style: none;
     padding: 0;
     margin: 0;
     li {
-        padding: 0 0 15px 40px; 
+        padding: 0 0 15px 40px;
         position: relative;
         line-height:24px;
     }
@@ -158,8 +158,8 @@
     display: inline-flex;
 }
 .sau-u-sf__form{
-    position:absolute; 
-    left:-9999px; 
+    position:absolute;
+    left:-9999px;
     top: -9999px;
 }
 
@@ -216,7 +216,42 @@
     &:hover{
         i{
                 transform: translateX(10px);
-        } 
+        }
     }
 }
+
+
+
+.sau-u-border-link{
+    a{
+        display:block;
+    }
+    &.is-white{
+        color:#fff;
+    }
+    &.is-blue{
+        a{
+            color:#0769ba;
+        }
+    }
+    &.is-active{
+        padding: 5px 5px;
+        margin: 0 25px;
+        border-bottom:4px solid #0769ba;
+        overflow: hidden;
+    }
+    &:link{
+        text-decoration:none;
+    }
+    &:visited{
+        text-decoration:none;
+    }
+    &:hover{
+        text-decoration:none;
+    }
+    &:active{
+        text-decoration:none;
+    }
+}
+
 

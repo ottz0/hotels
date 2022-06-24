@@ -3,9 +3,7 @@
     @include('layouts.partials.head')
 <body>
     <div id="app">
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

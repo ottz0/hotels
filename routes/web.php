@@ -19,9 +19,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/test', function () {
+    return view('test');
+});
 
 
 //Route::get('/', [EpsRapidController::class, 'test'])->name('welcome');

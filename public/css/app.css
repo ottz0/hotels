@@ -43017,7 +43017,7 @@ summary::-webkit-details-marker {
 .sau-c-page-hero.sau-c-page-hero__dark {
   background: url("/images/backgrounds/page-hero-left-dark.gif") top left no-repeat, url("/images/backgrounds/page-hero-right-dark.gif") top right no-repeat, #031f37;
 }
-.sau-c-page-hero.sau-c-page-hero__dark h1, .sau-c-page-hero.sau-c-page-hero__dark p, .sau-c-page-hero.sau-c-page-hero__dark .sau-u-subtitle {
+.sau-c-page-hero.sau-c-page-hero__dark .sau-u-subtitle {
   color: #fff;
 }
 .sau-c-page-hero.sau-c-page-hero__dark .sau-c-nav-mega__menu-items a {
@@ -43337,6 +43337,12 @@ summary::-webkit-details-marker {
   padding-bottom: 7px;
   font-size: 15px;
   font-weight: 300;
+}
+
+.sau-c-card-shadow {
+  border-radius: 6px;
+  box-shadow: 0px 6px 20px 17px rgba(0, 0, 0, 0.09);
+  background-color: #fff;
 }
 
 .sau-c-server-card {
@@ -44371,6 +44377,34 @@ summary::-webkit-details-marker {
   transform: translateX(10px);
 }
 
+.sau-u-border-link a {
+  display: block;
+}
+.sau-u-border-link.is-white {
+  color: #fff;
+}
+.sau-u-border-link.is-blue a {
+  color: #0769ba;
+}
+.sau-u-border-link.is-active {
+  padding: 5px 5px;
+  margin: 0 25px;
+  border-bottom: 4px solid #0769ba;
+  overflow: hidden;
+}
+.sau-u-border-link:link {
+  text-decoration: none;
+}
+.sau-u-border-link:visited {
+  text-decoration: none;
+}
+.sau-u-border-link:hover {
+  text-decoration: none;
+}
+.sau-u-border-link:active {
+  text-decoration: none;
+}
+
 :root {
   --brandColor: hsl(166, 67%, 51%);
   --background: rgb(247, 247, 247);
@@ -44378,18 +44412,8 @@ summary::-webkit-details-marker {
   --textLight: hsla(0, 0%, 0%, 0.33);
 }
 
-body {
-  background: var(--background);
-  height: 100vh;
-  color: var(--textDark);
-}
-
-.field:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
 .register {
-  margin-top: 10rem;
+  margin-top: 5rem;
   background: white;
   border-radius: 10px;
 }

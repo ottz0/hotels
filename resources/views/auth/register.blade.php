@@ -31,7 +31,7 @@
         </div>
         <div class="field">
             <div class="control">
-                <input class="input is-medium @error('password') is-danger @enderror" name="password_confirmation" type="password" placeholder="{{ __('Password Confir') }}">
+                <input class="input is-medium @error('password') is-danger @enderror" name="password_confirmation" type="password" placeholder="{{ __('Confirm Password') }}">
             </div>
             @error('password')
                 <p class="help is-danger">{{ $message }}</p>
