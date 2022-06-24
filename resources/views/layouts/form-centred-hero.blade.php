@@ -14,9 +14,7 @@
                 </div>
                 <div class="columns">
                     <div class="column is-4 is-offset-4">
-                        <div class="columns is-multiline has-text-centered">
-                            @yield('content')
-                        </div>
+                         @yield('content')
                     </div>
                 </div>
             </div>

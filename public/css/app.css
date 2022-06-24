@@ -44378,7 +44378,9 @@ summary::-webkit-details-marker {
 }
 
 .sau-u-border-link a {
-  display: block;
+  display: inline-block;
+  padding: 5px 5px;
+  margin: 0 25px;
 }
 .sau-u-border-link.is-white {
   color: #fff;
@@ -44387,10 +44389,10 @@ summary::-webkit-details-marker {
   color: #0769ba;
 }
 .sau-u-border-link.is-active {
-  padding: 5px 5px;
-  margin: 0 25px;
   border-bottom: 4px solid #0769ba;
   overflow: hidden;
+  padding: 5px 5px;
+  margin: 0 25px;
 }
 .sau-u-border-link:link {
   text-decoration: none;
