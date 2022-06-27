@@ -17,14 +17,15 @@
                 <div class="column is-8 is-offset-2 register">
                 <div class="columns">
                     <div class="column left">
-                        <h1 class="is-size-1 has-text-weight-bold" style="line-height:46px;">MySAU Online Portal</h1>
-                        <h2 class="subtitle colored is-4">Online access to purchase and configure your services</h2>
-                        <p>Start, stop and power cycle your server, show CPU usage and event logs. Access payment and billing information. Get free access to our MySAU online Portal.</p>
+                        <!-- content -->
+                        @yield('content')
+                        <!-- /content -->
                     </div>
                     <div class="column right has-text-centered">
                         <!-- form -->
                         @yield('section-form')
                         <!-- /form -->
+                        <p class="sau-u-font__size--sm pt-5">By providing your details you agree that Servers Australia may contact you about relevant services and offers as governed by our <br /><a href="#">Privacy Policy</a>.</p>
                     </div>
                 </div>
                 </div>
@@ -36,26 +37,26 @@
                         <nav class="level">
                           <div class="level-left">
                             <div class="level-item">
-                              <span class="icon">
-                                <i class="fab fa-twitter"></i>
-                              </span> &emsp;
-                              <span class="icon">
-                                <i class="fab fa-facebook"></i>
-                              </span> &emsp;
-                              <span class="icon">
-                                <i class="fab fa-instagram"></i>
-                              </span> &emsp;
-                              <span class="icon">
-                                <i class="fab fa-github"></i>
-                              </span> &emsp;
-                              <span class="icon">
-                                <i class="fas fa-envelope"></i>
-                              </span>
+                                <span class="icon">
+                                    <a href="/about-us/contact-us" target="_blank"><i class="fas fa-envelope"></i></a>
+                                </span> &emsp;
+                                <span class="icon">
+                                    <a href="https://www.facebook.com/ServersAustralia" target="_blank"><i class="fab fa-facebook"></i></a>
+                                </span> &emsp;
+                                <span class="icon">
+                                    <a href="https://www.linkedin.com/company/servers-australia/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                </span> &emsp;
+                                <span class="icon">
+                                    <a href="https://twitter.com/serversau" target="_blank"><i class="fab fa-twitter"></i></a>
+                                </span> &emsp;
+                                <span class="icon">
+                                    <a href="https://www.youtube.com/channel/UC-1xNkTHOgWemJDv-E261dQ" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </span> &emsp;
                             </div>
                           </div>
                           <div class="level-right">
                             <small class="level-item" style="color: var(--textLight)">
-                              &copy; Servers Austrlalia &reg;. All Rights Reserved.
+                                <p class="sau-u-font__size--sm">&copy; 2022 Servers Australia<sup>&reg;</sup>. All Rights Reserved. ABN: 98 125 037 443</p>
                             </small>
                           </div>
                         </nav>

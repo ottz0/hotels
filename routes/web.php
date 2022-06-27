@@ -19,8 +19,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/form-login', function () {
+    return view('forms-singles.form-login');
+});
+
+Route::get('/infopack', function () {
+    return view('forms-singles.form-infopack');
 });
 
 

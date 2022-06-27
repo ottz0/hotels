@@ -14,8 +14,8 @@
                         <div class="field">
                             <div class="control">
                                 <p class="control has-icons-left">
-                                    <input class="input is-large @error('name') is-danger @enderror" name="name" type="text" placeholder="{{ __('Your Name') }}" value="{{ old('name') }}">
-                                    <span class="icon is-large is-left">
+                                    <input class="input is-medium @error('name') is-danger @enderror" name="name" type="text" placeholder="{{ __('Your Name') }}" value="{{ old('name') }}">
+                                    <span class="icon is-medium is-left">
                                     <i class="far fa-user"></i>
                                     </span>
                                     @error('name')
@@ -27,8 +27,8 @@
                         <div class="field">
                             <div class="control">
                                 <p class="control has-icons-left">
-                                    <input class="input is-large @error('email') is-danger @enderror" name="email" type="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}">
-                                    <span class="icon is-large is-left">
+                                    <input class="input is-medium @error('email') is-danger @enderror" name="email" type="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}">
+                                    <span class="icon is-medium is-left">
                                     <i class="far fa-envelope"></i>
                                     </span>
                                     @error('email')
@@ -40,8 +40,8 @@
                         <div class="field">
                             <div class="control">
                                 <p class="control has-icons-left">
-                                    <input class="input is-large @error('password') is-danger @enderror" name="password" type="password" placeholder="{{ __('Password') }}">
-                                    <span class="icon is-large is-left">
+                                    <input class="input is-medium @error('password') is-danger @enderror" name="password" type="password" placeholder="{{ __('Password') }}">
+                                    <span class="icon is-medium is-left">
                                     <i class="far fa-lock"></i>
                                     </span>
                                     @error('password')
@@ -50,7 +50,7 @@
                                 </p>
                             </div>
                         </div>
-                        <button class="button is-block is-primary is-large is-fullwidth">{{ __('Sign Up') }}</button>
+                        <button class="button is-block is-primary is-medium is-fullwidth">{{ __('Sign Up') }}</button>
                     </form>
                     <p class="sau-u-font__size--xs pt-3">By providing your details you agree that Servers Australia may contact you about relevant services and offers as governed by our <br />Privacy Policy.</p>
                 </div>

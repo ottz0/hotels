@@ -14,8 +14,8 @@
                         <div class="field">
                             <div class="control">
                                 <p class="control has-icons-left">
-                                    <input class="input is-large @error('email') is-danger @enderror" name="email" type="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}">
-                                    <span class="icon is-large is-left">
+                                    <input class="input is-medium @error('email') is-danger @enderror" name="email" type="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}">
+                                    <span class="icon is-medium is-left">
                                     <i class="far fa-envelope"></i>
                                     </span>
                                     @error('email')
@@ -27,8 +27,8 @@
                         <div class="field">
                             <div class="control">
                                 <p class="control has-icons-left">
-                                    <input class="input is-large @error('password') is-danger @enderror" name="password" type="password" placeholder="{{ __('Password') }}">
-                                    <span class="icon is-large is-left">
+                                    <input class="input is-medium @error('password') is-danger @enderror" name="password" type="password" placeholder="{{ __('Password') }}">
+                                    <span class="icon is-medium is-left">
                                     <i class="far fa-lock"></i>
                                     </span>
                                     @error('password')
