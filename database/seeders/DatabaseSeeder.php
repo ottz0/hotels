@@ -9,6 +9,7 @@ use App\Models\Hotel;
 use App\Models\HotelFacility;
 use App\Models\User;
 use App\Models\Review;
+use App\Models\Server;
 
 class DatabaseSeeder extends Seeder
 {
@@ -59,6 +60,13 @@ class DatabaseSeeder extends Seeder
         HotelFacility::factory()->count(20)->create();
 
         Review::factory()->count(50)->create();
+
+
+        $servers = DB::table('servers')->insert([
+            ['name' => 'Blaze'],
+            ['name' => 'Enterprise'],
+            ['name' => 'Value']
+        ]);
 
 
 

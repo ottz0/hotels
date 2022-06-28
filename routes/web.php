@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\HotelReviewController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServerController;
 
 
 /*
@@ -26,6 +27,12 @@ Route::get('/form-login', function () {
 Route::get('/infopack', function () {
     return view('forms-singles.form-infopack');
 });
+
+// Route::get('/buy/dedicated-servers/blaze-dedicated-servers', function () {
+//     return view('buy.dedicated-servers.blaze');
+// });
+
+Route::resource('buy/dedicated-servers', ServerController::class);
 
 
 //Route::get('/', [EpsRapidController::class, 'test'])->name('welcome');
