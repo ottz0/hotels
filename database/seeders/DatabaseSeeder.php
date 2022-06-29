@@ -62,11 +62,9 @@ class DatabaseSeeder extends Seeder
         Review::factory()->count(50)->create();
 
 
-        $servers = DB::table('servers')->insert([
-            ['name' => 'Blaze'],
-            ['name' => 'Enterprise'],
-            ['name' => 'Value']
-        ]);
+        Server::factory()->count(50)->create();
+
+
 
 
 

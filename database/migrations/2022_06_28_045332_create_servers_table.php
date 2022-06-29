@@ -16,6 +16,14 @@ return new class extends Migration
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('price');
+            $table->string('processor_line_1');
+            $table->string('processor_line_2');
+            $table->string('memory');
+            $table->string('storage_line_1');
+            $table->string('storage_line_2');
+            $table->string('data');
+            $table->integer('benchmark');
         });
     }
 

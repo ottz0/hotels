@@ -28,5 +28,5 @@
     </div>
 </header>
 
-{{$servers}}
+@include('buy.dedicated-servers.partials.server-list')
 @endsection
