@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
             $table->string('name');
             $table->integer('price');
             $table->string('processor_line_1');

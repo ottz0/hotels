@@ -26,16 +26,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        // $hotelNames = DB::table('hotels')->insert([
-        //     ['name' => 'The Anchorage'],
-        //     ['name' => 'Ibis Budget Sydeny East'],
-        //     ['name' => 'Hilton Sydney'],
-        //     ['name' => 'Travelodge Hotel Sydney'],
-        //     ['name' => 'The Charrington Hotel of Chatswood'],
-        //     ['name' => 'YEHS Hotel Sydney CBD'],
-        //     ['name' => 'Great Souther Hotel Sydney'],
-        //     ['name' => 'Park Hyat Sydney'],
-        // ]);
+
 
         // $facilities = DB::table('hotel_facilities')->insert([
         //     'hotel_id' => 1,
@@ -61,7 +52,7 @@ class DatabaseSeeder extends Seeder
 
         Review::factory()->count(50)->create();
 
-
+        Server::factory()->default();
         Server::factory()->count(50)->create();
 
 
