@@ -28,5 +28,5 @@
     </div>
 </header>
 
-@include('buy.dedicated-servers.partials.server-list')
+@include('marketplace.dedicated-servers.partials.server-list')
 @endsection

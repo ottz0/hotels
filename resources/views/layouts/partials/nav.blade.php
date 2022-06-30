@@ -5,7 +5,6 @@
                 <div class="column">
                     <div class="sau-c-nav__top">
                         <ul>
-
                             <li><a href="https://status.mysau.com.au/" target="_blank">Network Status</a></li>
                             <li><a href="/about-us/contact-us/">Contact us</a></li>
                             <li><a href="tel:1300788862">24/7 support 1300 788 862</a></li>
@@ -17,23 +16,18 @@
                                     <p><i class="fas fa-user-circle fa-xl"></i>{{ Auth::user()->name }}</p>
                                 @endguest
                             </li>
-
-
-
-
-
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="is-flex">
                 <div class="mr-auto">
-                    <a href="/"><img src="/images/sau-brandmark-horizontal-blue.svg" alt="Servers Australia logo" width="370"/></a>
+                    <a href="/"><img src="/images/sau-brandmark-horizontal-blue.svg" alt="Servers Australia logo" width="310"/></a>
                 </div>
                 <nav class="sau-c-nav-mega">
                     <ul class="sau-c-nav-mega__menu">
                         <!-- Main menu Item - Buy -->
-                        <li class="sau-c-nav-mega__menu-items menu-main"><a href="#"><i class="fas fa-chevron-down fa-sm"></i> Products</a>
+                        <li class="sau-c-nav-mega__menu-items menu-main"><a href="#"><i class="fas fa-chevron-down fa-sm"></i> Marketplace</a>
                             <div class="sau-c-nav-mega__menu-sub-wrapper">
                                 <div class="columns sau-c-nav__menu-sub">
                                     <div class="column">
@@ -252,9 +246,9 @@
                 <div class="pl-5">
                     <!-- Authentication Links -->
                     @guest
-                        <a href="{{ route('register') }}" class="button is-primary">{{ __('Sign Up') }}</a>
+                        <a href="{{ route('register') }}" class="button is-primary is-medium">{{ __('Sign Up') }}</a>
                     @else
-                        <a href="{{ route('logout') }}" class="button is-primary" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a href="{{ route('logout') }}" class="button is-primary is-medium" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -32,8 +32,7 @@ Route::get('/infopack', function () {
 //     return view('buy.dedicated-servers.blaze');
 // });
 
-Route::resource('buy/dedicated-servers', ServerController::class);
-
+Route::resource('marketplace/dedicated-servers', ServerController::class);
 
 //Route::get('/', [EpsRapidController::class, 'test'])->name('welcome');
 
@@ -44,7 +43,5 @@ Route::get('/', [HomeController::class, 'home'])->name('welcome');
 Route::resource('hotels', HotelController::class);
 
 Route::resource('hotels.reviews', HotelReviewController::class);
-
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

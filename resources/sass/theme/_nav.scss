@@ -282,7 +282,7 @@
         a:hover {
             color: #0769ba;
             text-decoration: none;
-           transform: scale(1.05);
+            transform: scale(1.05);
         }
         a:active {
             color: #373737;
@@ -305,4 +305,38 @@
         }
     }
 
+}
+
+
+.sau-c-nav-list{
+    ul{
+        margin-top:20px;
+    }
+    li{
+        display:inline-block;
+        padding-right: 35px;
+        a{
+            color:#373737;
+        }
+        a:link {
+            color:#373737;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #373737;
+            text-decoration: none;
+        }
+        a:hover {
+            color:#0769ba;
+            text-decoration: none;
+        }
+        a:active {
+            color: #373737;
+            text-decoration: none;
+        }
+    }
+    .is-active{
+        border-bottom:3px solid #0769ba;
+        padding-bottom: 7px;
+    }
 }

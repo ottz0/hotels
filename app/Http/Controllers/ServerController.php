@@ -14,7 +14,7 @@ class ServerController extends Controller
      */
     public function index()
     {
-        return view('buy.dedicated-servers.blaze', ['servers' => Server::get()]);
+        return view('marketplace.dedicated-servers.blaze', ['servers' => Server::get()]);
     }
 
     /**
