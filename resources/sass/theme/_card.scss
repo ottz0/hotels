@@ -10,8 +10,9 @@
 .sau-c-server-card{
     background:#fff;
     border-radius: 6px;
+    width: 100%;
     &.is-outlined{
-        border:1px solid red;
+        border:1px solid #CFCFCF;
     }
     &.is-shadow{
         -webkit-box-shadow: 2px 2px 19px 0px rgba(0,0,0,0.11);

@@ -19,7 +19,7 @@ class ServerFactory extends Factory
     {
 
         $products = [
-            'Value Server'
+            'value'
         ];
 
         $memory = [

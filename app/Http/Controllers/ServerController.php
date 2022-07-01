@@ -16,7 +16,9 @@ class ServerController extends Controller
     {
         //$servers = Server::paginate(20);
 
-        return view('marketplace.dedicated-servers.blaze', ['servers' => Server::get()]);
+        return view('marketplace.dedicated-servers.index', [
+            'servers' => Server::get()
+        ]);
 
         // return view('marketplace.dedicated-servers.blaze', [
         //     'servers' => $servers
@@ -50,9 +52,11 @@ class ServerController extends Controller
      * @param  \App\Models\Server  $server
      * @return \Illuminate\Http\Response
      */
-    public function show(Server $server)
+    public function show(Server $server, $id)
     {
-        //
+        return view('marketplace.dedicated-servers.show', [
+            'server' => Server::findOrFail($id)
+        ]);
     }
 
     /**

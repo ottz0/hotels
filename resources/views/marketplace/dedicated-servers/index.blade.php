@@ -17,7 +17,7 @@
                 </ul>
             </div>
         </div>
-        @include('marketplace.dedicated-servers.partials.server-list')
+        @include('marketplace.partials.server-list')
     </div>
 </main>
 @endsection

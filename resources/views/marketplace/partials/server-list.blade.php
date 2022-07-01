@@ -45,7 +45,7 @@
                             </ul>
                             <p class="is-size-3 has-text-weight-semibold" style="margin-bottom:-10px;">${{$server->price}}.00</p>
                             <p class="sau-u-font__size--sm pb-2">ex.GST/month</p>
-                            <a href="https://www.mysau.com.au/order/create?dedicated-server=" class="button is-primary is-medium is-block mx-3 mb-3">Buy Now</a>
+                            <a href="{{ route('dedicated-servers.show', ['dedicated_server' => $server->id]) }}" class="button is-primary is-medium is-block mx-3 mb-3">Buy Now</a>
                         </div>
 
                     </div>
