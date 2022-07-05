@@ -54,7 +54,7 @@
             </div>
             <div class="columns">
                 <div class="column">
-                    {{-- {{$servers->links()}} --}}
+                    {{$servers->links('partials.sau-pagination')}}
                 </div>
             </div>
         </div>

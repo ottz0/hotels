@@ -14,15 +14,15 @@ class ServerController extends Controller
      */
     public function index()
     {
-        //$servers = Server::paginate(20);
+        $servers = Server::paginate(20);
+
+        // return view('marketplace.dedicated-servers.index', [
+        //     'servers' => Server::get()
+        // ]);
 
         return view('marketplace.dedicated-servers.index', [
-            'servers' => Server::get()
+            'servers' => $servers
         ]);
-
-        // return view('marketplace.dedicated-servers.blaze', [
-        //     'servers' => $servers
-        // ]);
     }
 
     /**

@@ -7,6 +7,7 @@
             <li><a href="#">Colocation</a></li>
             <li><a href="#">Private Cloud</a></li>
             <li><a href="#">Virtual Data Centres</a></li>
+            <li><a href="#">Addons</a></li>
         </ul>
     </div>
 </div>
