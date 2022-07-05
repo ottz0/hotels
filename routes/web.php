@@ -28,6 +28,8 @@ Route::get('/infopack', function () {
     return view('forms-singles.form-infopack');
 });
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/buy/dedicated-servers/blaze-dedicated-servers', function () {
 //     return view('buy.dedicated-servers.blaze');
 // });
@@ -40,7 +42,19 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'home'])->name('welcome');
 
+
+
+Route::resource('accommodation/{accommodation_type}/accommodations', HotelController::class);
+
 Route::resource('hotels', HotelController::class);
 Route::resource('hotels.reviews', HotelReviewController::class);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+//nrl/team/players
+
+//marketplace/{product_category}/{products}/{id}
+
+//accommodation/{accommodation_type}/{accommodations}/{id}
