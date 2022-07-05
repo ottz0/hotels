@@ -41,7 +41,6 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'home'])->name('welcome');
 
 Route::resource('hotels', HotelController::class);
-
 Route::resource('hotels.reviews', HotelReviewController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
