@@ -13,6 +13,10 @@ class Hotel extends Model
 
     public $timestamps = false;
 
+    public function hotelCategories(){
+        return $this->belongsTo('App\Models\HotelCategory');
+    }
+
     public function hotelFacilities(){
         return $this->hasOne('App\Models\HotelFacility');
     }

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\HotelCategory;
 use App\Models\Hotel;
 use App\Models\HotelFacility;
 use App\Models\User;
@@ -46,8 +47,8 @@ class DatabaseSeeder extends Seeder
         User::factory()->default()->create();
         User::factory()->count(20)->create();
 
+        HotelCategory::factory()->default();
         Hotel::factory()->count(20)->create();
-
         HotelFacility::factory()->count(20)->create();
 
         Review::factory()->count(50)->create();

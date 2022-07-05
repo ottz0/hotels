@@ -1,5 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
+<main class="sau-c-page-hero sau-c-page-hero__light sau-c-page-hero__light--white" style="height:100vh;">
+    <div class="container">
+        @include('layouts.partials.nav')
+    </div>
     <div class="columns pt-5">
         <div class="column is-half is-offset-one-quarter">
             <div class="card">
@@ -54,5 +58,5 @@
             @endforeach
         </div>
     </div>
+</main>
 @endsection
-
