@@ -10,4 +10,19 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function index()
+    {
+        return view('marketplace.categories.index');
+    }
+
+    public function show()
+    {
+        return view('marketplace.categories.show');
+    }
+
+    public function subCategory()
+    {
+        return view('marketplace.categories.sub_categories');
+    }
 }

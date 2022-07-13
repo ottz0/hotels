@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ServerController;
 
 
@@ -37,4 +38,8 @@ Route::get('/', [HomeController::class, 'home'])->name('welcome');
 
 Route::resource('marketplace/dedicated-servers', ServerController::class);
 
+Route::get('/marketplace', [CategoryController::class, 'index']);
+Route::get('/marketplace/{categories}', [CategoryController::class, 'show']);
+Route::get('/marketplace/{categories}/{subCategory}', [CategoryController::class, 'subCategory']);
 
+//Route::get('/marketplace/{categories}/{subCategory}/{article}', [ArticleController::class, 'show']);
