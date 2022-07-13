@@ -32,7 +32,6 @@
     <div class="column is-half is-offset-one-quarter">
         <h1 class="is-size-1">This is the home page</h1>
         <test />
-        @include('hotels.partials.hotel-list')
     </div>
 </div>
 @endsection

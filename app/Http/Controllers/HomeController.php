@@ -30,6 +30,6 @@ class HomeController extends Controller
 
     public function home()
     {
-        return view('welcome', ['hotels' => Hotel::get()]);
+        return view('welcome');
     }
 }
