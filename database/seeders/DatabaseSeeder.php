@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Category;
 use App\Models\Server;
 
 class DatabaseSeeder extends Seeder
@@ -38,14 +39,10 @@ class DatabaseSeeder extends Seeder
         //     $comment->blog_post_id = $posts->random()->id;
         //     $comment->save();
         // });
-        User::factory()->default()->create();
-        User::factory()->count(20)->create();
 
 
-        Server::factory()->default();
-        Server::factory()->count(50)->create();
-
-
+        Category::factory()->default();
+        Server::factory()->count(200)->create();
 
 
 

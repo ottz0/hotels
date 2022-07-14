@@ -19,7 +19,7 @@ class ServerFactory extends Factory
     {
 
         $products = [
-            'value'
+            'server'
         ];
 
         $memory = [
@@ -30,8 +30,9 @@ class ServerFactory extends Factory
         ];
 
         return [
+            'parent_id' => $this->faker->numberBetween(1, 4),
             'type' => $products[rand(0, count($products) - 1)],
-            'name' => $products[rand(0, count($products) - 1)],
+            'title' => $products[rand(0, count($products) - 1)],
             'price' => $this->faker->numberBetween(80, 4000),
             'processor_line_1' => 'Intel Xeon E-2374G 4 Cores 8 HT Cores',
             'processor_line_2' => '3.7Ghz with 5.1Ghz Boost',

@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('parent_id')->nullable();
+            //$table->foreign('category_id')->references('id')->on('categories');
             $table->string('type');
-            $table->string('name');
+            $table->string('title');
             $table->integer('price');
             $table->string('processor_line_1');
             $table->string('processor_line_2');

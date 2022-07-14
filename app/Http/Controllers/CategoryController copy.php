@@ -27,10 +27,13 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::where('slug', $id)->firstOrFail();
-        $category->descendants;
+        //dd($this->tree[2]);
 
-        dd($category);
+        dd($slug);
+
+        $category = Category::where('slug',$categoryId)->get();
+
+        // dd($category);
 
 
         // return view('marketplace.categories.show', [
