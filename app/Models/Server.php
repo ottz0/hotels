@@ -10,7 +10,14 @@ class Server extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id','category_id','title','slug'];
+
     use HasRecursiveRelationships;
 
     public $timestamps = false;
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -16,6 +16,9 @@ class Category extends Model
 
     use HasRecursiveRelationships;
 
-
+    public function servers()
+    {
+        return $this->hasMany(Server::class);
+    }
 
 }

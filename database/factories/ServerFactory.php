@@ -30,7 +30,7 @@ class ServerFactory extends Factory
         ];
 
         return [
-            'parent_id' => $this->faker->numberBetween(1, 4),
+            'category_id' => $this->faker->numberBetween(4, 9),
             'type' => $products[rand(0, count($products) - 1)],
             'title' => $products[rand(0, count($products) - 1)],
             'price' => $this->faker->numberBetween(80, 4000),
@@ -40,7 +40,8 @@ class ServerFactory extends Factory
             'storage_line_1' => '2x 480GB M.2 Enterprise',
             'storage_line_2' => 'NVMe 100,000 IOPS',
             'data' => '7TB @ 2x 10Gbe Network Ports',
-            'benchmark' => $this->faker->numberBetween(14000, 100000)
+            'benchmark' => $this->faker->numberBetween(14000, 100000),
+            'benchmark_percentage' => $this->faker->numberBetween(10, 100)
         ];
     }
 

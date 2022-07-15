@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parent_id')->nullable();
-            //$table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->string('type');
             $table->string('title');
             $table->integer('price');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('storage_line_2');
             $table->string('data');
             $table->integer('benchmark');
+            $table->string('benchmark_percentage');
         });
     }
 

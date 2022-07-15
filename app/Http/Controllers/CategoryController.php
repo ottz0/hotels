@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Category;
+use App\Models\Server;
 
 class CategoryController extends Controller
 {
@@ -25,17 +26,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $category = Category::where('slug', $id)->firstOrFail();
-        $category->descendants;
+        $parents = Category::tree()->get()->toTree();
+        $categories = Category::where('slug', $slug)->get();
+        $serverCategories = Category::where('parent_id',$categories[0]->id)->with('servers')->get();
 
-        dd($category);
-
-
-        // return view('marketplace.categories.show', [
-        //     'key' => 'val'
-        // ]);
+        return view('marketplace.categories.show', [
+            'parents' => $parents,
+            'serverCategories' => $serverCategories
+        ]);
     }
 
     public function subCategory()
