@@ -17,6 +17,14 @@
                 </ul>
             </div>
         </div>
+        <div class="columns is-multiline">
+            <div class="column is-12">
+                <h2 class="is-size-2 pt-5">Dedicated Servers</h2>
+            </div>
+            <div class="column is-12">
+                @include('marketplace.partials.server-list')
+            </div>
+        </div>
     </div>
 </main>
 @endsection
