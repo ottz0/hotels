@@ -42,9 +42,9 @@ class DatabaseSeeder extends Seeder
 
 
         Category::factory()->default();
-        Server::factory()->count(200)->create();
+        //Server::factory()->count(200)->create();
 
-
+        Server::factory(200)->servers()->create();
 
 
     }
