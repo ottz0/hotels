@@ -1,24 +1,14 @@
 <div class="columns">
     <div class="column">
-        <ul class="sau-c-nav-list pt-3">
-            @foreach ($serverCategories as $serverCategory)
-                <li><a href="/marketplace/{{$serverCategory->slug}}" class="{{ (request()->segment(1) === $serverCategory->slug) ? 'is-active' : '' }}">{{$serverCategory->title}}</a></li>
-            @endforeach
-        </ul>
-    </div>
-</div>
-
-<div class="columns">
-    <div class="column">
         <div class="columns is-ancestor has-text-centered is-desktop is-multiline">
             @foreach ($serverCategories as $serverCategory)
                 @foreach ($serverCategory->servers as $server)
                     <div class="column is-3-desktop">
                         <div class="sau-c-server-card is-shadow item is-flex is-flex-direction-column is-justify-content-space-between p-4">
-                            {{-- <div class="has-text-centered pt-3">
-                                <img src="" alt="Enterprise Dedicated Servers" width="80">
-                            </div> --}}
-                            <h5 class="is-size-"><strong>{{$server->title}}</strong></h5>
+                            <div class="has-text-centered pt-3">
+                                <img src="/images/{{$server->type}}.svg" alt="Enterprise Dedicated Servers" width="50">
+                            </div>
+                            <h5 class="is-size-4"><strong>{{$server->title}}</strong></h5>
                             <div class="columns is-centered is-mobile">
                                 <div class="column is-6">
                                     <progress class="progress is-success is-small" value="{{$server->benchmark_percentage}}" max="100" style="margin:0;">15%</progress>

@@ -40,7 +40,6 @@ class CategoryController extends Controller
 
     public function subCategory($categorySlug, $subCategorySlug)
     {
-
         $parents = $this->tree;
         $serverCategories = Category::where('slug', $subCategorySlug)->with('servers')->get();
 

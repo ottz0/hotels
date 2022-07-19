@@ -53,6 +53,11 @@ class CategoryFactory extends Factory
             ],
             [
                 'parent_id' => 1,
+                'title' => 'GPU Dedicted Servers',
+                'slug'  => 'gpu-dedicated-servers'
+            ],
+            [
+                'parent_id' => 1,
                 'title' => 'Value Dedicted Servers',
                 'slug'  => 'value-dedicated-servers'
             ],

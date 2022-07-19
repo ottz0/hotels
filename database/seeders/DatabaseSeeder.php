@@ -40,11 +40,16 @@ class DatabaseSeeder extends Seeder
         //     $comment->save();
         // });
 
-
+        User::factory(10)->create();
+        User::factory()->default()->create();
         Category::factory()->default();
+        Server::factory()->default();
+        Server::factory(100)->valueServers()->create();
+
+
         //Server::factory()->count(200)->create();
 
-        Server::factory(200)->servers()->create();
+        //Server::factory(200)->servers()->create();
 
 
     }

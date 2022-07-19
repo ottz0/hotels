@@ -9,9 +9,9 @@
             <div class="column">
                 <h1 class="is-size-1 pt-5">Marketplace</h1>
                 <ul class="sau-c-nav-list pt-3">
-                    <li><a href="#" class="is-active">Dedicated Servers</a></li>
-                    <li><a href="#">Cloud Servers</a></li>
-                    <li><a href="#">Colocation</a></li>
+                    @foreach ($parents as $parent)
+                        <li><a href="/marketplace/{{$parent->slug}}" class="{{ (request()->segment(2) === $parent->slug) ? 'is-active' : '' }}">{{$parent->title}}</a></li>
+                    @endforeach
                     <li><a href="#">Private Cloud</a></li>
                     <li><a href="#">Virtual Data Centres</a></li>
                 </ul>
@@ -19,12 +19,19 @@
         </div>
         <div class="columns is-multiline">
             <div class="column is-12">
-                <h2 class="is-size-2 pt-5">Dedicated Servers</h2>
-            </div>
-            <div class="column is-12">
-                @include('marketplace.partials.server-list')
+                <h2 class="is-size-4 pt-5">Dedicated Servers</h2>
             </div>
         </div>
+        <div class="columns">
+            <div class="column">
+                <ul class="sau-c-nav-list pt-3">
+                    @foreach ($serverCategories as $serverCategory)
+                        <li><a href="/marketplace/{{$parents[0]->slug}}/{{$serverCategory->slug}}" class="{{ (request()->segment(1) === $serverCategory->slug) ? 'is-active' : '' }}">{{$serverCategory->title}}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+        @include('marketplace.partials.server-list')
     </div>
 </main>
 @endsection
