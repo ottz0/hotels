@@ -6,15 +6,17 @@
                     <div class="sau-c-nav__top">
                         <ul>
                             <li><a href="https://status.mysau.com.au/" target="_blank">Network Status</a></li>
-                            <li><a href="/about-us/contact-us/">Contact us</a></li>
                             <li><a href="tel:1300788862">24/7 support 1300 788 862</a></li>
                             <li>|</li>
                             <li>
                                 @guest
-                                    <a href="{{ route('login') }}"><i class="far fa-user-circle"></i> MySAU Login</a>
+                                    <a href="{{ route('login') }}">MySAU Login <i class="far fa-user-circle fa-xl"></i></a>
                                 @else
-                                    <p><i class="fas fa-user-circle fa-xl"></i>{{ Auth::user()->name }}</p>
+                                    <p><i class="fas fa-user-circle fa-xxl"></i>{{ Auth::user()->name }}</p>
                                 @endguest
+                            </li>
+                            <li>
+                                <a href="#"><i class="far fa-cart-shopping fa-xl"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -22,7 +24,7 @@
             </div>
             <div class="is-flex">
                 <div class="mr-auto">
-                    <a href="/"><img src="/images/sau-brandmark-horizontal-blue.svg" alt="Servers Australia logo" width="310"/></a>
+                    <a href="/"><img src="/images/sau-brandmark-horizontal-blue.svg" alt="Servers Australia logo" width="350"/></a>
                 </div>
                 <nav class="sau-c-nav-mega">
                     <ul class="sau-c-nav-mega__menu">

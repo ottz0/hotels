@@ -40,8 +40,21 @@ class CategoryController extends Controller
 
     public function subCategory($categorySlug, $subCategorySlug)
     {
+
         $parents = $this->tree;
-        $serverCategories = Category::where('slug', $subCategorySlug)->with('servers')->get();
+        $serverCategories = Category::where('slug', $subCategorySlug)->with('siblingsAndSelf')->with('servers')->get();
+
+
+
+
+        //$ancestors = Category::find(4)->siblingsAndSelf;
+        //dd($serverCategories);
+
+
+
+
+
+
 
         return view('marketplace.categories.sub_categories', [
             'parents' => $parents,

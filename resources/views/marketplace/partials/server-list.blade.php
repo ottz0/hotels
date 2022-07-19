@@ -3,12 +3,14 @@
         <div class="columns is-ancestor has-text-centered is-desktop is-multiline">
             @foreach ($serverCategories as $serverCategory)
                 @foreach ($serverCategory->servers as $server)
-                    <div class="column is-3-desktop">
-                        <div class="sau-c-server-card is-shadow item is-flex is-flex-direction-column is-justify-content-space-between p-4">
-                            <div class="has-text-centered pt-3">
-                                <img src="/images/{{$server->type}}.svg" alt="Enterprise Dedicated Servers" width="50">
+                    <div class="column is-4-desktop">
+                        <div class="sau-c-server-card is-shadow is-flex is-flex-direction-column is-justify-content-space-between p-4" style="margin-bottom:60px;">
+                            <div class="has-text-centered">
+                                <div class="sau-u-square is-sm has-text-centered">
+                                    <img src="/images/{{$serverCategory->slug}}.svg" alt="Enterprise Dedicated Servers" width="45">
+                                </div>
                             </div>
-                            <h5 class="is-size-4"><strong>{{$server->title}}</strong></h5>
+                            <h5 class="is-size-4" style="margin-top:-40px;"><strong>{{$server->title}}</strong></h5>
                             <div class="columns is-centered is-mobile">
                                 <div class="column is-6">
                                     <progress class="progress is-success is-small" value="{{$server->benchmark_percentage}}" max="100" style="margin:0;">15%</progress>
@@ -41,21 +43,7 @@
                             <p class="sau-u-font__size--sm pb-2">ex.GST/month</p>
                             <a href="#" class="button is-primary is-medium mx-3 mb-3">Buy Now</a>
                         </div>
-
-
-
-
-
-
-
                     </div>
-
-
-
-
-
-
-
                 @endforeach
             @endforeach
         </div>
