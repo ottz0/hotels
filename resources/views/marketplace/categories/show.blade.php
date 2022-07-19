@@ -17,17 +17,6 @@
                 </ul>
             </div>
         </div>
-        {{-- {{$serverCategories}} --}}
-        <div class="columns is-multiline pb-5">
-            <div class="column is-12">
-                <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                        <li><a href="/marketplace">Marketplace</a></li>
-                        <li class="is-active"><a href="/marketplace/{{$parents[0]->slug}}"  aria-current="page">{{$parents[0]->title}}</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
         <div class="columns pt-5">
             <div class="column is-3">
                 <ul class="sau-m-aside-nav">
@@ -49,6 +38,17 @@
                 </ul>
             </div>
             <div class="column" class="is-7">
+                <div class="columns is-multiline pb-5">
+                    <div class="column is-12">
+                        <h2 class="is-size-2 has-text-weight-normal">Dedicated Servers</h2>
+                        <nav class="breadcrumb" aria-label="breadcrumbs">
+                            <ul>
+                                <li class="has-text-weight-normal"><a href="/marketplace">Marketplace</a></li>
+                                <li class="is-active"><a href="/marketplace/{{$parents[0]->slug}}"  aria-current="page">{{$parents[0]->title}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
                 @include('marketplace.partials.server-list')
             </div>
         </div>

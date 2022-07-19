@@ -10,13 +10,13 @@
                             <li>|</li>
                             <li>
                                 @guest
-                                    <a href="{{ route('login') }}">MySAU Login <i class="far fa-user-circle fa-xl"></i></a>
+                                    <a href="{{ route('login') }}"><i class="far fa-user-circle fa-xl pr-1"></i> MySAU Login</a>
                                 @else
                                     <p><i class="fas fa-user-circle fa-xxl"></i>{{ Auth::user()->name }}</p>
                                 @endguest
                             </li>
                             <li>
-                                <a href="#"><i class="far fa-cart-shopping fa-xl"></i></a>
+                                <a href="#"><i class="far fa-cart-shopping fa-xl pl-1"></i></a>
                             </li>
                         </ul>
                     </div>

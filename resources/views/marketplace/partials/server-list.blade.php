@@ -1,4 +1,4 @@
-<div class="columns">
+<div class="columns pt-5">
     <div class="column">
         <div class="columns is-ancestor has-text-centered is-desktop is-multiline">
             @foreach ($serverCategories as $serverCategory)

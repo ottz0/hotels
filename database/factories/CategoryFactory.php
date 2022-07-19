@@ -29,51 +29,61 @@ class CategoryFactory extends Factory
             [
                 'parent_id' => null,
                 'title' => 'Dedicated Servers',
+                'tagline' => '',
                 'slug'  => 'dedicated-servers'
             ],
             [
                 'parent_id' => null,
                 'title' => 'Cloud Servers',
+                'tagline' => '',
                 'slug'  => 'cloud-servers'
             ],
             [
                 'parent_id' => null,
-                'title' => 'colocation',
+                'title' => 'Colocation',
+                'tagline' => '',
                 'slug'  => 'colocation'
             ],
             [
                 'parent_id' => 1,
                 'title' => 'Blaze Dedicted Servers',
+                'tagline' => 'Perfect for everyday business',
                 'slug'  => 'blaze-dedicated-servers'
             ],
             [
                 'parent_id' => 1,
                 'title' => 'Enterprise Dedicted Servers',
+                'tagline' => 'Maximum Enterprise performance',
                 'slug'  => 'enterprise-dedicated-servers'
             ],
             [
                 'parent_id' => 1,
                 'title' => 'GPU Dedicted Servers',
+                'tagline' => 'Huge GPU prodcessing',
                 'slug'  => 'gpu-dedicated-servers'
             ],
             [
                 'parent_id' => 1,
                 'title' => 'Value Dedicted Servers',
+                'tagline' => 'Up in minutes, No long term contracts',
                 'slug'  => 'value-dedicated-servers'
             ],
             [
                 'parent_id' => 2,
                 'title' => 'Essentials Cloud Servers',
+                'tagline' => '',
                 'slug'  => 'essentials-dedicated-servers'
             ],
             [
                 'parent_id' => 2,
                 'title' => 'Storage Cloud Servers',
+                'tagline' => '',
                 'slug'  => 'storage-dedicated-servers'
             ],
             [
                 'parent_id' => 3,
                 'title' => 'Colocation',
+                'tagline' => '',
                 'slug'  => 'colocation'
             ]
         ]);

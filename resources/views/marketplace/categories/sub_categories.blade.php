@@ -17,17 +17,6 @@
                 </ul>
             </div>
         </div>
-        <div class="columns is-multiline pb-5">
-            <div class="column is-12">
-                <nav class="breadcrumb" aria-label="breadcrumbs">
-                    <ul>
-                      <li><a href="/marketplace">Marketplace</a></li>
-                      <li><a href="/marketplace/{{$parents[0]->slug}}">{{$parents[0]->title}}</a></li>
-                      <li class="is-active"><a href="/marketplace/{{$serverCategories[0]->slug}}" aria-current="page">{{$serverCategories[0]->title}}</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
         <div class="columns pt-5">
             <div class="column is-3">
                 <ul class="sau-m-aside-nav">
@@ -40,7 +29,7 @@
                                     </div>
                                     <div>
                                         <p class="sau-m-aside-nav__desc">{{$serverCategory->title}}</p>
-                                        <p class="sau-m-aside-nav__tag">Up in minutes, No long term contracts</p>
+                                        <p class="sau-m-aside-nav__tag">{{$serverCategory->tagline}}</p>
                                     </div>
                                 </div>
                             </a>
@@ -49,7 +38,21 @@
                 </ul>
             </div>
             <div class="column" class="is-7">
-                @include('marketplace.partials.server-list')
+                <div class="column" class="is-7">
+                    <div class="columns is-multiline pb-5">
+                        <div class="column is-12">
+                            <h2 class="is-size-2 has-text-weight-normal">{{$serverCategories[0]->title}}</h2>
+                            <nav class="breadcrumb" aria-label="breadcrumbs">
+                                <ul>
+                                    <li class="has-text-weight-normal"><a href="/marketplace">Marketplace</a></li>
+                                    <li class="has-text-weight-normal"><a href="/marketplace/{{$parents[0]->slug}}">{{$parents[0]->title}}</a></li>
+                                    <li class="is-active"><a href="/marketplace/{{$serverCategories[0]->slug}}" aria-current="page">{{$serverCategories[0]->title}}</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    @include('marketplace.partials.server-list')
+                </div>
             </div>
         </div>
     </div>

@@ -310,12 +310,13 @@
 
 
 .sau-c-nav-list{
-    ul{
-        margin-top:20px;
-    }
+    margin-top:20px;
+    border-bottom: 1px solid #E7E7E7;
+    padding-bottom: 15px;
     li{
         display:inline-block;
         padding-right: 35px;
+        font-weight: 400;
         a{
             color:#373737;
             font-size: 19px;
@@ -338,7 +339,7 @@
         }
     }
     .is-active{
-        border-bottom:3px solid #0769ba;
-        padding-bottom: 10px;
+        border-bottom:2px solid #0769ba;
+        padding-bottom: 17px;
     }
 }
