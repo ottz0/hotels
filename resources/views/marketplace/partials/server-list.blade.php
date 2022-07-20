@@ -40,7 +40,7 @@
                                 </ul>
                             </div>
                             <p class="is-size-2 has-text-weight-semibold" style="margin-bottom:-15px;">${{$server->price}}.00</p>
-                            <p class="sau-u-font__size--sm pb-2">ex.GST/month</p>
+                            <p class="sau-u-font__size--xs py-2">ex.GST/month</p>
                             <a href="#" class="button is-primary is-medium mx-3 mb-3">Buy Now</a>
                         </div>
                     </div>

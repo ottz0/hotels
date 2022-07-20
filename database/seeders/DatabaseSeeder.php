@@ -46,6 +46,7 @@ class DatabaseSeeder extends Seeder
         Server::factory()->default();
         Server::factory(100)->valueServers()->create();
         Server::factory(30)->cloudServers()->create();
+        Server::factory(15)->colocation()->create();
 
 
         //Server::factory()->count(200)->create();

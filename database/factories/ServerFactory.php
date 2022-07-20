@@ -217,5 +217,17 @@ class ServerFactory extends Factory
         });
     }
 
+    public function colocation()
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+                'category_id' => 10,
+                'type' => 'colocation',
+                'title' => 'colocation',
+            ];
+        });
+    }
+
 
 }
