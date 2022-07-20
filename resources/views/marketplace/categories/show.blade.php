@@ -40,7 +40,7 @@
             <div class="column" class="is-7">
                 <div class="columns is-multiline pb-5">
                     <div class="column is-12">
-                        <h2 class="is-size-2 has-text-weight-normal">Dedicated Servers</h2>
+                        <h2 class="is-size-2 has-text-weight-normal">{{$category->title}}</h2>
                         <nav class="breadcrumb" aria-label="breadcrumbs">
                             <ul>
                                 <li class="has-text-weight-normal"><a href="/marketplace">Marketplace</a></li>

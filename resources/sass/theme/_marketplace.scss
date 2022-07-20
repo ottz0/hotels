@@ -27,7 +27,7 @@
 }
 
 .sau-m-aside-nav{
-    border-right:1px solid #F6F6F6;
+    //border-right:1px solid #F6F6F6;
     a{
         color:363636;
         text-decoration: none;
@@ -35,13 +35,14 @@
         display: block;
         padding:10px 0;
         &.is-active{
-            //background-color:#F6F6F6;
-            border-right:2px solid #0769ba;
+            background-color:#F6F6F6;
+            //border-right:2px solid #0769ba;
         }
     }
     a:link {
         color:#363636;
         text-decoration:none;
+        transition: all .2s ease-in-out;
     }
     a:visited {
         color:#363636;
@@ -51,7 +52,8 @@
         color:#363636;
         text-decoration:none;
         //background-color:#F6F6F6;
-        border-right:2px solid #0769ba;
+        //border-right:2px solid #0769ba;
+        transform: scale(1.05);
     }
     a:active {
         color:#fff;

@@ -46,25 +46,25 @@ class CategoryFactory extends Factory
             ],
             [
                 'parent_id' => 1,
-                'title' => 'Blaze Dedicted Servers',
+                'title' => 'Blaze Dedicated Servers',
                 'tagline' => 'Perfect for everyday business',
                 'slug'  => 'blaze-dedicated-servers'
             ],
             [
                 'parent_id' => 1,
-                'title' => 'Enterprise Dedicted Servers',
+                'title' => 'Enterprise Dedicated Servers',
                 'tagline' => 'Maximum Enterprise performance',
                 'slug'  => 'enterprise-dedicated-servers'
             ],
             [
                 'parent_id' => 1,
-                'title' => 'GPU Dedicted Servers',
+                'title' => 'GPU Dedicated Servers',
                 'tagline' => 'Huge GPU prodcessing',
                 'slug'  => 'gpu-dedicated-servers'
             ],
             [
                 'parent_id' => 1,
-                'title' => 'Value Dedicted Servers',
+                'title' => 'Value Dedicated Servers',
                 'tagline' => 'Up in minutes, No long term contracts',
                 'slug'  => 'value-dedicated-servers'
             ],

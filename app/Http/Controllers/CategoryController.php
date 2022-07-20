@@ -29,11 +29,12 @@ class CategoryController extends Controller
     public function show($slug)
     {
         $parents = $this->tree;
-        $categories = Category::where('slug', $slug)->get();
-        $serverCategories = Category::where('parent_id',$categories[0]->id)->with('servers')->get();
+        $category = Category::where('slug', $slug)->get();
+        $serverCategories = Category::where('parent_id',$category[0]->id)->with('ancestorsAndSelf')->with('servers')->get();
 
         return view('marketplace.categories.show', [
             'parents' => $parents,
+            'category' => $category[0],
             'serverCategories' => $serverCategories
         ]);
     }
@@ -43,18 +44,6 @@ class CategoryController extends Controller
 
         $parents = $this->tree;
         $serverCategories = Category::where('slug', $subCategorySlug)->with('siblingsAndSelf')->with('servers')->get();
-
-
-
-
-        //$ancestors = Category::find(4)->siblingsAndSelf;
-        //dd($serverCategories);
-
-
-
-
-
-
 
         return view('marketplace.categories.sub_categories', [
             'parents' => $parents,

@@ -44514,9 +44514,6 @@ summary::-webkit-details-marker {
   width: 80px;
 }
 
-.sau-m-aside-nav {
-  border-right: 1px solid #F6F6F6;
-}
 .sau-m-aside-nav a {
   color: 363636;
   text-decoration: none;
@@ -44525,11 +44522,12 @@ summary::-webkit-details-marker {
   padding: 10px 0;
 }
 .sau-m-aside-nav a.is-active {
-  border-right: 2px solid #0769ba;
+  background-color: #F6F6F6;
 }
 .sau-m-aside-nav a:link {
   color: #363636;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 .sau-m-aside-nav a:visited {
   color: #363636;
@@ -44538,7 +44536,7 @@ summary::-webkit-details-marker {
 .sau-m-aside-nav a:hover {
   color: #363636;
   text-decoration: none;
-  border-right: 2px solid #0769ba;
+  transform: scale(1.05);
 }
 .sau-m-aside-nav a:active {
   color: #fff;
