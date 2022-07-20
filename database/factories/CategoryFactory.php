@@ -71,14 +71,14 @@ class CategoryFactory extends Factory
             [
                 'parent_id' => 2,
                 'title' => 'Essentials Cloud Servers',
-                'tagline' => '',
-                'slug'  => 'essentials-dedicated-servers'
+                'tagline' => 'Balanced CPU, Memory, Storage',
+                'slug'  => 'essentials-cloud-servers'
             ],
             [
                 'parent_id' => 2,
                 'title' => 'Storage Cloud Servers',
-                'tagline' => '',
-                'slug'  => 'storage-dedicated-servers'
+                'tagline' => 'Big Data',
+                'slug'  => 'storage-cloud-servers'
             ],
             [
                 'parent_id' => 3,

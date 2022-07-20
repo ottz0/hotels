@@ -43263,7 +43263,7 @@ summary::-webkit-details-marker {
 .sau-c-nav-list {
   margin-top: 20px;
   border-bottom: 1px solid #E7E7E7;
-  padding-bottom: 15px;
+  padding-bottom: 17px;
 }
 .sau-c-nav-list li {
   display: inline-block;
@@ -43292,7 +43292,7 @@ summary::-webkit-details-marker {
 }
 .sau-c-nav-list .is-active {
   border-bottom: 2px solid #0769ba;
-  padding-bottom: 17px;
+  padding-bottom: 15px;
 }
 
 .sau-c-footer {

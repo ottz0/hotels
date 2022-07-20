@@ -205,5 +205,17 @@ class ServerFactory extends Factory
         });
     }
 
+    public function CloudServers()
+    {
+        return $this->state(function (array $attributes) {
+
+            return [
+                'category_id' => 2,
+                'type' => 'cloud',
+                'title' => 'cloud',
+            ];
+        });
+    }
+
 
 }
