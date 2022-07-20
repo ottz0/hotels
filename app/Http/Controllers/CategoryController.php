@@ -32,6 +32,8 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->get();
         $serverCategories = Category::where('parent_id',$category[0]->id)->with('ancestorsAndSelf')->with('servers')->get();
 
+        //dd($serverCategories);
+
         return view('marketplace.categories.show', [
             'parents' => $parents,
             'category' => $category[0],

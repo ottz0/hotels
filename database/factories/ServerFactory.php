@@ -210,7 +210,7 @@ class ServerFactory extends Factory
         return $this->state(function (array $attributes) {
 
             return [
-                'category_id' => 2,
+                'category_id' => $this->faker->numberBetween(8, 9),
                 'type' => 'cloud',
                 'title' => 'cloud',
             ];
