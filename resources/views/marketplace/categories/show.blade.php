@@ -17,8 +17,8 @@
                 <!-- Aside Menu -->
                 @include('marketplace.partials.aside-menu')
             </div>
-            <div class="column is-7">
-                {{$servers}}
+            <div class="column is-9">
+                @include('marketplace.partials.server-list')
             </div>
         </div>
     </div>

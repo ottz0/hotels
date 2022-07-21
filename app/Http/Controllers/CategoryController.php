@@ -35,16 +35,15 @@ class CategoryController extends Controller
         //Get the parent categories
         $parentCategorySlug = Category::where('slug', $slug)->get();
         $parentCategories = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->get();
-        $servers = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->with('servers')->get();
+        $serverLists = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->with('servers')->get();
 
-        //$servers =
 
         //dd($parentCategories);
 
         return view('marketplace.categories.show', [
             'rootCategories' => $rootCategories,
             'parentCategories' => $parentCategories,
-            'servers' => $servers,
+            'serverLists' => $serverLists,
             //'theCategory' => $serverCategories[0]->parentAndSelf[0],
 
             //'serverCategories' => $serverCategories[0]
@@ -71,7 +70,12 @@ class CategoryController extends Controller
         //$parentCategories = Category::where('parent_id', $parentCategorySlug[0]->id)->get();
 
         //get the slug then find the id
-        $servers = Category::find(4)->with('servers')->get();
+        //$servers = Category::find(4)->with('servers')->get();
+
+
+        $serverLists = Category::where('slug', $subCategorySlug)->with('siblingsAndSelf')->with('servers')->get();
+
+        //dd($serverCategories);
 
         //dd($servers);
 
@@ -102,7 +106,7 @@ class CategoryController extends Controller
         return view('marketplace.categories.sub_categories', [
             'rootCategories' => $rootCategories,
             'parentCategories' => $parentCategories,
-            'servers'=> $servers
+            'serverLists'=> $serverLists
         ]);
     }
 }
