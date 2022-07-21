@@ -18,7 +18,7 @@
                 @include('marketplace.partials.aside-menu')
             </div>
             <div class="column is-9">
-                <h2 class="is-size-2 has-text-weight-normal">{{$parent->title}}</h2>
+                <h2 class="is-size-2 has-text-weight-semibold">{{$parent->title}}</h2>
                 <nav class="breadcrumb pb-5" aria-label="breadcrumbs">
                     <ul>
                         <li class="has-text-weight-normal"><a href="/marketplace">Marketplace</a></li>

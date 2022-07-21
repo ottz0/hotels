@@ -41,7 +41,7 @@
                             </div>
                             <p class="is-size-2 has-text-weight-semibold" style="margin-bottom:-15px;">${{$server->price}}.00</p>
                             <p class="sau-u-font__size--xs py-2">ex.GST/month</p>
-                            <a href="/marketplace" class="button is-primary is-medium mx-3 mb-3">Buy Now</a>
+                            <a href="/marketplace/{{ Request::segment(2) }}/{{$serverList->slug}}/{{$server->slug}}" class="button is-primary is-medium mx-3 mb-3">Buy Now</a>
                         </div>
                     </div>
                 @endforeach

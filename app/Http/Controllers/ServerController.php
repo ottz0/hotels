@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Server;
-use Illuminate\Http\Request;
+use Request;
 
 class ServerController extends Controller
 {
+    public function __construct()
+    {
+        $this->tree = Category::tree()->get()->toTree();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,85 +19,54 @@ class ServerController extends Controller
      */
     public function index()
     {
-        $servers = Server::paginate(20);
 
-        // return view('marketplace.dedicated-servers.index', [
-        //     'servers' => Server::get()
-        // ]);
-
-        return view('marketplace.dedicated-servers.index', [
-            'servers' => $servers
-        ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Server  $server
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($rootSlug, $parentCategorySlug, $serverSlug)
     {
+
+         //Main Menu - Root Categories Null
+         $rootCategories = $this->tree;
+
+         //$parentCategorySlug = Category::where('slug', $slug)->get();
+         //$parentCategories = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->get();
+         //$serverLists = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->with('servers')->get();
+
+         //$cc = Request::segment(2);
+         //$category = Category::where('slug', $parentCategorySlug)->get();
+
+         //dd($rootSlug);
+
+         $rootCategory = Category::where('slug', $rootSlug)->get();
+         $category = Category::where('slug', $parentCategorySlug)->get();
+         $subCategory = Category::where('slug', $serverSlug)->get();
+
+
+         //RootCategory
+        $server = Server::where('slug', $serverSlug)->get();
+
+
+        //$parentCategories = Category::where('parent_id', 1)->get();
+
+        //dd($parentCategorySlug);
+
+
+
         return view('marketplace.servers.show', [
-            'rootCategories' => 'monket', //where parent_id is null
-            'parent' => 'wad', //the parent that is selected
-            'parentCategories' => 'dick', //the single parent
-            'server'=> 'fuckwit' //the servers
+            'rootCategories' => $rootCategories, //where parent_id is null
+            'rootCategory' => $rootCategory[0],
+            'category' => $category[0],
+            'subCategory' => $subCategory,
+            'parent' => $parentCategorySlug[0], //the parent that is selected
+            'category' => $category,
+            //'parentCategories' => $parentCategories, //the single parent
+            'server'=> $server[0] //the servers
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Server  $server
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Server $server)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Server  $server
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Server $server)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Server  $server
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Server $server)
-    {
-        //
-    }
 }

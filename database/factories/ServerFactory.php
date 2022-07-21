@@ -37,6 +37,7 @@ class ServerFactory extends Factory
         $servers = DB::table('servers')->insert([
             [
                 'category_id' => 4,
+                'slug' => 'blaze-4-dedicated-server',
                 'type' => 'blaze',
                 'title' => 'Blaze 4',
                 'price' => 299,
@@ -51,6 +52,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 4,
+                'slug' => 'blaze-6-dedicated-server',
                 'type' => 'blaze',
                 'title' => 'Blaze 6',
                 'price' => 349,
@@ -65,6 +67,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 4,
+                'slug' => 'blaze-8-dedicated-server',
                 'type' => 'blaze',
                 'title' => 'Blaze 8',
                 'price' => 399,
@@ -79,6 +82,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 5,
+                'slug' => 'enterprise-16-dedicated-server',
                 'type' => 'enterprise',
                 'title' => 'Enterprise 16',
                 'price' => 649,
@@ -93,6 +97,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 5,
+                'slug' => 'enterprise-24-dedicated-server',
                 'type' => 'enterprise',
                 'title' => 'Enterprise 24',
                 'price' => 849,
@@ -107,6 +112,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 5,
+                'slug' => 'enterprise-32-dedicated-server',
                 'type' => 'enterprise',
                 'title' => 'Enterprise 32',
                 'price' => 1199,
@@ -121,6 +127,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 5,
+                'slug' => 'enterprise-48-dedicated-server',
                 'type' => 'enterprise',
                 'title' => 'Enterprise 48',
                 'price' => 1399,
@@ -135,6 +142,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 5,
+                'slug' => 'enterprise-64-dedicated-server',
                 'type' => 'enterprise',
                 'title' => 'Enterprise 64',
                 'price' => 1799,
@@ -149,6 +157,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 6,
+                'slug' => 'gpu-24-dedicated-server',
                 'type' => 'gpu',
                 'title' => 'GPU 24',
                 'price' => 1299,
@@ -163,6 +172,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 6,
+                'slug' => 'gpu-48-dedicated-server',
                 'type' => 'gpu',
                 'title' => 'GPU 48',
                 'price' => 1799,
@@ -177,6 +187,7 @@ class ServerFactory extends Factory
             ],
             [
                 'category_id' => 6,
+                'slug' => 'gpu-64-dedicated-server',
                 'type' => 'gpu',
                 'title' => 'GPU 64',
                 'price' => 2299,
@@ -199,6 +210,7 @@ class ServerFactory extends Factory
 
             return [
                 'category_id' => 7,
+                'slug' => 'value-'.$this->faker->unique()->numberBetween($min = 1, $max = 200),
                 'type' => 'value',
                 'title' => 'Value',
             ];
@@ -211,6 +223,7 @@ class ServerFactory extends Factory
 
             return [
                 'category_id' => $this->faker->numberBetween(8, 9),
+                'slug' => 'value-'.$this->faker->unique()->numberBetween($min = 1, $max = 200),
                 'type' => 'cloud',
                 'title' => 'cloud',
             ];
@@ -223,6 +236,7 @@ class ServerFactory extends Factory
 
             return [
                 'category_id' => 10,
+                'slug' => 'value-'.$this->faker->unique()->numberBetween($min = 1, $max = 200),
                 'type' => 'colocation',
                 'title' => 'colocation',
             ];
