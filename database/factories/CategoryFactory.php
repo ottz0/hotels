@@ -65,7 +65,7 @@ class CategoryFactory extends Factory
             [
                 'parent_id' => 1,
                 'title' => 'Value Dedicated Servers',
-                'tagline' => 'Up in minutes, No long term contracts',
+                'tagline' => 'Up and running in minutes',
                 'slug'  => 'value-dedicated-servers'
             ],
             [

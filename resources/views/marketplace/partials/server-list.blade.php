@@ -7,7 +7,7 @@
                         <div class="sau-c-server-card is-shadow is-flex is-flex-direction-column is-justify-content-space-between p-4" style="margin-bottom:60px;">
                             <div class="has-text-centered">
                                 <div class="sau-u-square is-sm has-text-centered">
-                                    {{-- <img src="/images/{{$serverCategory->slug}}.svg" alt="Enterprise Dedicated Servers" width="45"> --}}
+                                    <img src="/images/{{$server->type}}.svg" alt="{{$server->title}}" width="45">
                                 </div>
                             </div>
                             <h5 class="is-size-4" style="margin-top:-40px;"><strong>{{$server->title}}</strong></h5>
@@ -41,7 +41,7 @@
                             </div>
                             <p class="is-size-2 has-text-weight-semibold" style="margin-bottom:-15px;">${{$server->price}}.00</p>
                             <p class="sau-u-font__size--xs py-2">ex.GST/month</p>
-                            <a href="#" class="button is-primary is-medium mx-3 mb-3">Buy Now</a>
+                            <a href="/marketplace" class="button is-primary is-medium mx-3 mb-3">Buy Now</a>
                         </div>
                     </div>
                 @endforeach

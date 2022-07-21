@@ -37,6 +37,9 @@ Route::get('/', [HomeController::class, 'home'])->name('welcome');
 
 Route::get('/marketplace', [CategoryController::class, 'index']);
 Route::get('marketplace/{category}', [CategoryController::class, 'show']);
-Route::get('marketplace/{parent}/{category}', [CategoryController::class, 'subCategory']);
+Route::get('marketplace/{root}/{parent}', [CategoryController::class, 'subCategory']);
+
+Route::get('marketplace/{root}/{parent}/{server}', [ServerController::class, 'show']);
+
 
 //Route::get('/marketplace/{categories}/{subCategory}/{article}', [ArticleController::class, 'show']);

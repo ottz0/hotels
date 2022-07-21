@@ -52,10 +52,13 @@ class ServerController extends Controller
      * @param  \App\Models\Server  $server
      * @return \Illuminate\Http\Response
      */
-    public function show(Server $server, $id)
+    public function show()
     {
-        return view('marketplace.dedicated-servers.show', [
-            'server' => Server::findOrFail($id)
+        return view('marketplace.servers.show', [
+            'rootCategories' => 'monket', //where parent_id is null
+            'parent' => 'wad', //the parent that is selected
+            'parentCategories' => 'dick', //the single parent
+            'server'=> 'fuckwit' //the servers
         ]);
     }
 

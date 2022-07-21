@@ -12,7 +12,7 @@
                 @include('marketplace.partials.category-sub-nav')
             </div>
         </div>
-        <div class="columns pt-5">
+        <div class="columns">
             <div class="column is-3">
                 <!-- Aside Menu -->
                 @include('marketplace.partials.aside-menu')

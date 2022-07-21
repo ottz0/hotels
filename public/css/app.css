@@ -42654,6 +42654,10 @@ h6 {
   font-weight: 400;
 }
 
+.progress, .progress-wrapper.is-not-native {
+  border-radius: 0 !important;
+}
+
 @media only screen and (max-width: 768px) {
   .container {
     padding: 0 20px 0 20px;
@@ -44551,7 +44555,7 @@ summary::-webkit-details-marker {
   width: 45px;
 }
 .sau-m-aside-nav .sau-m-aside-nav__desc {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 .sau-m-aside-nav .sau-m-aside-nav__tag {
