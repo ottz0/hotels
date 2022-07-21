@@ -37,16 +37,11 @@ class CategoryController extends Controller
         $parentCategories = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->get();
         $serverLists = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->with('servers')->get();
 
-
-        //dd($parentCategories);
-
         return view('marketplace.categories.show', [
-            'rootCategories' => $rootCategories,
-            'parentCategories' => $parentCategories,
-            'serverLists' => $serverLists,
-            //'theCategory' => $serverCategories[0]->parentAndSelf[0],
-
-            //'serverCategories' => $serverCategories[0]
+            'rootCategories' => $rootCategories, //where parent_id is null
+            'parent' => $parentCategorySlug[0], //the parent that is selected
+            'parentCategories' => $parentCategories, //value, gpu, blaze etc
+            'serverLists' => $serverLists, //the servers
         ]);
     }
 
@@ -64,47 +59,12 @@ class CategoryController extends Controller
         //Get the parent slug and find the id
         $parentCategorySlug = Category::where('slug', $categorySlug)->get();
         $parentCategories = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->get();
+        $serverLists = Category::where('slug', $subCategorySlug)->with('parentAndSelf')->with('servers')->get();
 
-        //$servers = Category::where('id',$subCategorySlug)->with('servers')->get();
-
-        //$parentCategories = Category::where('parent_id', $parentCategorySlug[0]->id)->get();
-
-        //get the slug then find the id
-        //$servers = Category::find(4)->with('servers')->get();
-
-
-        $serverLists = Category::where('slug', $subCategorySlug)->with('siblingsAndSelf')->with('servers')->get();
-
-        //dd($serverCategories);
-
-        //dd($servers);
-
-
-        //$subCategories = Category::where('parent_id', $categorySlug)->get();
-
-        // $constraint = function ($query) use ($subCategorySlug){
-        //     $query->where('slug', $subCategorySlug);
-        // };
-
-        //$tree = Category::treeOf($constraint)->get();
-
-
-
-        // rootCategories
-        // parentCategories
-        // selectedCategories
-
-
-
-
-        //dd($category);
-
-
-        //Get the selected category, the sub categories and the servers within the sub category
-        //$servers = Category::where('slug', $subCategorySlug)->with('ancestorsAndSelf')->with('servers')->get();
 
         return view('marketplace.categories.sub_categories', [
             'rootCategories' => $rootCategories,
+            'parent' => $serverLists[0], //the parent that is selected
             'parentCategories' => $parentCategories,
             'serverLists'=> $serverLists
         ]);
