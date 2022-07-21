@@ -28,11 +28,8 @@ class CategoryController extends Controller
      */
     public function show($slug)
     {
-
         //Main Menu - Root Categories Null
         $rootCategories = $this->tree;
-
-        //Get the parent categories
         $parentCategorySlug = Category::where('slug', $slug)->get();
         $parentCategories = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->get();
         $serverLists = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->with('servers')->get();
@@ -47,26 +44,17 @@ class CategoryController extends Controller
 
     public function subCategory($categorySlug, $subCategorySlug)
     {
-
         //Main Menu - All of the parents
         $rootCategories = $this->tree;
-
-
-
-        //Get the selected category and show all the servers in that category
-        //$subCategories = Category::where('parent_id',$category[0]->id)->with('parentAndSelf')->with('servers')->get();
-
-        //Get the parent slug and find the id
         $parentCategorySlug = Category::where('slug', $categorySlug)->get();
         $parentCategories = Category::where('parent_id',$parentCategorySlug[0]->id)->with('parentAndSelf')->get();
         $serverLists = Category::where('slug', $subCategorySlug)->with('parentAndSelf')->with('servers')->get();
 
-
         return view('marketplace.categories.sub_categories', [
-            'rootCategories' => $rootCategories,
+            'rootCategories' => $rootCategories, //where parent_id is null
             'parent' => $serverLists[0], //the parent that is selected
-            'parentCategories' => $parentCategories,
-            'serverLists'=> $serverLists
+            'parentCategories' => $parentCategories, //the single parent
+            'serverLists'=> $serverLists //the servers
         ]);
     }
 }
