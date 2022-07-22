@@ -14,13 +14,12 @@
                         <img src="/images/vmware-cloud-verified.svg" alt="VMware Cloud Verified">
                         <img src="/images/microsoft-hyper-v.gif" alt="Microsoft Hyper-v">
                         <img src="/images/equinix-logo.svg" alt="Equninix">
-
                     </div>
                     <div class="column is-10">
                         <video controls poster="/videos/screen.gif">
                             <source src="/videos/dl20-server.mp4" type="video/mp4" style="width:100%;">
                                 Your browser does not support the video tag.
-                          </video>
+                        </video>
                     </div>
                 </div>
                 <div class="columns">

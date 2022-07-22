@@ -6,8 +6,10 @@
                     <div class="column is-4">
                         <div class="sau-c-server-card is-shadow is-flex is-flex-direction-column is-justify-content-space-between p-4" style="margin-bottom:60px;">
                             <div class="has-text-centered">
-                                <div class="sau-u-square is-sm has-text-centered">
-                                    <img src="/images/{{$server->type}}.svg" alt="{{$server->title}}" width="45">
+                                <div class="sau-u-square">
+                                    <div class="sau-u-square__inner is-sm">
+                                        <img src="/images/{{$server->type}}.svg" alt="{{$server->title}}" width="50">
+                                    </div>
                                 </div>
                             </div>
                             <h5 class="is-size-4" style="margin-top:-40px;"><strong>{{$server->title}}</strong></h5>

@@ -8,21 +8,24 @@
 }
 
 .sau-u-square{
-    background-color: #fff;
-    box-shadow: 2px 2px 19px 0px rgb(0 0 0 / 11%);
     position:relative;
-    border-radius: 10px;
-    top:-60px;
-    padding-top:8px;
-    margin-bottom:-25px;
     display:inline-block;
-    &.is-xs{
-        height:45px;
-        width:45px;
-    }
-    &.is-sm{
-        height:80px;
-        width:80px;
+    top:-60px;
+    .sau-u-square__inner{
+        background-color: #fff;
+        box-shadow: 2px 2px 19px 0px rgb(0 0 0 / 11%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.is-xs{
+            height:45px;
+            width:45px;
+        }
+        &.is-sm{
+            height:75px;
+            width:75px;
+        }
     }
 }
 

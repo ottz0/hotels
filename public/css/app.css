@@ -43272,7 +43272,7 @@ summary::-webkit-details-marker {
 .sau-c-nav-list li {
   display: inline-block;
   padding-right: 35px;
-  font-weight: 400;
+  font-weight: 300;
 }
 .sau-c-nav-list li a {
   color: #373737;
@@ -44500,22 +44500,25 @@ summary::-webkit-details-marker {
 }
 
 .sau-u-square {
+  position: relative;
+  display: inline-block;
+  top: -60px;
+}
+.sau-u-square .sau-u-square__inner {
   background-color: #fff;
   box-shadow: 2px 2px 19px 0px rgba(0, 0, 0, 0.11);
-  position: relative;
   border-radius: 10px;
-  top: -60px;
-  padding-top: 8px;
-  margin-bottom: -25px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.sau-u-square.is-xs {
+.sau-u-square .sau-u-square__inner.is-xs {
   height: 45px;
   width: 45px;
 }
-.sau-u-square.is-sm {
-  height: 80px;
-  width: 80px;
+.sau-u-square .sau-u-square__inner.is-sm {
+  height: 75px;
+  width: 75px;
 }
 
 .sau-m-aside-nav a {

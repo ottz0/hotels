@@ -24,7 +24,7 @@
             </div>
             <div class="is-flex">
                 <div class="mr-auto">
-                    <a href="/"><img src="/images/sau-brandmark-horizontal-blue.svg" alt="Servers Australia logo" width="350"/></a>
+                    <a href="/"><img src="/images/sau-brandmark-horizontal-blue.svg" alt="Servers Australia logo" width="340"/></a>
                 </div>
                 <nav class="sau-c-nav-mega">
                     <ul class="sau-c-nav-mega__menu">
