@@ -220,6 +220,26 @@
     }
 }
 
+.sau-u-hover-box{
+    border:1px solid #CFCFCF;
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+    &:link{
+        text-decoration:none;
+    }
+    &:visited{
+        text-decoration:none;
+    }
+    &:hover{
+        text-decoration:none;
+        border:1px solid #000;
+    }
+    &:active{
+        text-decoration:none;
+    }
+}
+
 .sau-u-border-link{
     a{
         display:inline-block;
