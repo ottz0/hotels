@@ -293,7 +293,7 @@
                         </video>
                     </div>
                     <div class="column">
-                        <h3 class="is-size-3">The industry’s most advanced artificial intelligence for infrastructure</h3>
+                        <h3 class="is-size-3 pb-4">The industry’s most advanced artificial intelligence for infrastructure</h3>
                         <p>It is a cloud-based artificial intelligence for IT operations (AIOps) platform that applies advanced machine learning to transform how infrastructure is managed and supported. Every second, it collects and analyses millions of sensors from over 150,000 systems across the globe. It then learns from this data, engineering and HPE Pointnext Services solutions to drive global intelligence and insights from storage to virtual machines. Infrastructure powered by HPE InfoSight continuously gets smarter and more autonomous.</p>
                         <ul class="sau-u-bullets pt-4">
                             <li>Predict and prevent: HPE InfoSight automatically predicts and prevents problems before you even know there was an issue.</li>

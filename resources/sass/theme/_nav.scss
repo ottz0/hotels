@@ -207,7 +207,8 @@
             margin-left: 20px;
             height:50px;
             &.menu-main{
-                font-size:19px;
+                font-size:18px;
+                font-weight:400;
             }
             i{
                 -moz-transition: all 0.3s linear;
@@ -316,10 +317,10 @@
     li{
         display:inline-block;
         padding-right: 35px;
-        font-weight: 300;
+        font-weight: 400;
         a{
             color:#373737;
-            font-size: 19px;
+            font-size: 18px;
         }
         a:link {
             color:#373737;
@@ -340,6 +341,6 @@
     }
     .is-active{
         border-bottom:2px solid #0769ba;
-        padding-bottom: 15px;
+        padding-bottom: 14px;
     }
 }

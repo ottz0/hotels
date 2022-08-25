@@ -42789,6 +42789,7 @@ h2 {
 
 h3 {
   font-size: 40px;
+  line-height: 40px;
 }
 
 h4 {
@@ -43327,7 +43328,8 @@ summary::-webkit-details-marker {
   height: 50px;
 }
 .sau-c-nav-mega .sau-c-nav-mega__menu .sau-c-nav-mega__menu-items.menu-main {
-  font-size: 19px;
+  font-size: 18px;
+  font-weight: 400;
 }
 .sau-c-nav-mega .sau-c-nav-mega__menu .sau-c-nav-mega__menu-items i {
   transition: all 0.3s linear;
@@ -43424,11 +43426,11 @@ summary::-webkit-details-marker {
 .sau-c-nav-list li {
   display: inline-block;
   padding-right: 35px;
-  font-weight: 300;
+  font-weight: 400;
 }
 .sau-c-nav-list li a {
   color: #373737;
-  font-size: 19px;
+  font-size: 18px;
 }
 .sau-c-nav-list li a:link {
   color: #373737;
@@ -43448,7 +43450,7 @@ summary::-webkit-details-marker {
 }
 .sau-c-nav-list .is-active {
   border-bottom: 2px solid #0769ba;
-  padding-bottom: 15px;
+  padding-bottom: 14px;
 }
 
 .sau-c-footer {
@@ -44577,7 +44579,7 @@ summary::-webkit-details-marker {
 .sau-u-bullets li {
   padding: 0 0 15px 40px;
   position: relative;
-  line-height: 24px;
+  line-height: 27px;
 }
 .sau-u-bullets li::before {
   position: absolute;
